@@ -14,9 +14,9 @@ function App() {
 			<SearchBar />
 			<LocationInfo />
 			<WeatherTabs />
-			{/* <AdditionalInfo /> */}
-			{/* <Temperature /> */}
-			{/* <Graph />s */}
+			<AdditionalInfo />
+			<Temperature />
+			<Graph />
 			{/*Insert components here (above)*/}
 		</div>
 	);
