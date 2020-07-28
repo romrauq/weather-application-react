@@ -1,38 +1,210 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f5f5dc !important;
+}
+
+p {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 .App {
-  text-align: center;
+	width: 30vw !important;
+	height: fit-content !important;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*FIRST DIV ELEMENTS AND CHILDREN*/
+.searchbar {
+	width: 98%;
+	margin: 0 auto 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="text"] {
+	padding-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-bar {
+	width: 88%;
+	height: 30px;
+	font-size: 1rem;
+	margin: 10px 0 5px 0;
+	border: 1px solid rgba(135, 206, 235, 0.7);
+	border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-icon {
+	color: #555;
+	font-size: 1.3rem;
+	margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*SECOND DIV ELEMENTS AND CHILDREN*/
+.d2 {
+	width: 98%;
+	margin: 0 auto 5px;
+}
+
+.d2-1 {
+	width: 45%; /*changed from 'width:50%;' (23/02/20)*/
+	height: 7rem;
+	display: inline-block;
+}
+
+.location-heading {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.location-date {
+	color: #555;
+	font-size: 1rem;
+	margin-bottom: 0;
+}
+
+.location-icon {
+	font-size: 0.9rem;
+	color: skyblue;
+}
+
+.location-condition {
+	color: skyblue;
+	font-size: 0.9rem;
+}
+
+.d2-2 {
+	float: right;
+}
+
+.location-image {
+	width: 7rem;
+	height: 7rem;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+/*THIRD DIV ELEMENTS AND CHILDREN*/
+.d3 {
+	clear: both;
+	width: 98%;
+	background-color: #5f9ea0;
+	margin: 0 auto 10px;
+	border-radius: 10px;
+}
+
+.d3-1 {
+	height: 60px;
+	display: flex;
+	justify-content: space-around;
+	margin: 5px auto;
+}
+
+.weather-panel {
+	width: 36px;
+	height: 50px;
+	color: white;
+	text-align: center;
+	font-size: 0.6rem;
+	margin: 5px auto;
+	border-radius: 0 0 10px 10px;
+	display: inline-block;
+}
+
+.icons {
+	color: white;
+	font-size: 1.1rem;
+}
+
+.line-divider {
+	width: 98%;
+	margin: 10px auto;
+}
+
+.section-heading {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+/*FOURTH DIV ELEMENTS AND CHILDREN*/
+.d4 {
+	width: 98%;
+	margin: 0px auto 10px;
+}
+
+.d4-1 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.d4-1-1,
+.d4-1-2,
+.d4-1-3 {
+	font-size: 0.8rem;
+}
+
+.line-divider-2 {
+	width: 98%;
+	margin: 5px auto 5px;
+}
+
+/*FIFTH DIV ELEMENTS AND CHILDREN*/
+.d5 {
+	width: 98%;
+	height: 1.4rem;
+	margin: 0px auto 10px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.options {
+	font-size: 0.8rem;
+	font-weight: bold;
+	font-family: Arial;
+	border-radius: 5px;
+}
+
+/*SIXTH DIV ELEMENTS AND CHILDREN*/
+.d6 {
+	width: 98%;
+	height: 35vh;
+	margin: 0px auto 15px;
+	border: dashed 1px #808080;
+	border-radius: 5px;
+}
+
+.graph-placeholder {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	text-align: center;
+}
+
+/*---------------------------------------------------*/
+@media screen and (min-width: 800px) {
+	.main-wrapper {
+		height: auto !important; /*added (23/02/20)*/
+		width: 25% !important; /*added (23/02/20)*/
+	}
+
+	.location-heading {
+		font-size: 1.2rem; /*added (23/02/20)*/
+		font-weight: bold; /*added (23/02/20)*/
+		margin-bottom: 0; /*added (23/02/20)*/
+	}
+
+	.location-image {
+		width: 6rem; /*added (23/02/20)*/
+		height: 6rem; /*added (23/02/20)*/
+	}
 }
