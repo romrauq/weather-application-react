@@ -2,7 +2,7 @@ import React from "react";
 
 const Location = () => {
 	return (
-		<div className="location-container">
+		<div className="location-component">
 			<div className="location-container-child-1">
 				<a href="location.html">
 					<h1 className="location-heading">
