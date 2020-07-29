@@ -5,56 +5,50 @@
 }
 
 body {
-	background-color: #f5f5dc !important;
-}
-
-p {
-	margin: 0 !important;
-	padding: 0 !important;
+	background-color: #f5f5dc;
 }
 
 .App {
-	width: 30vw !important;
-	height: fit-content !important;
+	width: 25vw;
+	height: fit-content;
 	padding: 10px;
-	margin: 0 auto;
+	margin: 15px auto;
+	border: 1px solid #000000;
 	background-color: #ffffff;
 }
 
-/*FIRST DIV ELEMENTS AND CHILDREN*/
-.searchbar {
+/*Searchbar Component Styles:*/
+.searchbar-container {
+	display: flex;
+	flex-direction: row;
 	width: 98%;
-	margin: 0 auto 5px;
+	margin: 0 auto;
 }
 
 input[type="text"] {
-	padding-left: 10px;
-}
-
-.search-bar {
 	width: 88%;
-	height: 30px;
+	height: 35px;
 	font-size: 1rem;
-	margin: 10px 0 5px 0;
+	padding: 5px 5px;
 	border: 1px solid rgba(135, 206, 235, 0.7);
-	border-radius: 5px;
+	border-radius: 3px;
 }
 
 .search-icon {
 	color: #555;
-	font-size: 1.3rem;
-	margin-top: 10px;
+	font-size: 1.5rem;
+	margin: auto;
 }
 
-/*SECOND DIV ELEMENTS AND CHILDREN*/
+/*Location Component Styles:*/
 .d2 {
 	width: 98%;
-	margin: 0 auto 5px;
+	margin: 0 auto 15px;
 }
 
 .d2-1 {
-	width: 45%; /*changed from 'width:50%;' (23/02/20)*/
-	height: 7rem;
+	width: 45%;
+	/* height: 7rem; */
 	display: inline-block;
 }
 
@@ -91,7 +85,7 @@ input[type="text"] {
 	border-radius: 5px;
 }
 
-/*THIRD DIV ELEMENTS AND CHILDREN*/
+/*WeatherTabs Component styles:*/
 .d3 {
 	clear: both;
 	width: 98%;
