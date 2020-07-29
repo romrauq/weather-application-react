@@ -8,21 +8,22 @@ body {
 	background-color: #f5f5dc;
 }
 
+/* Main app container styles:  */
 .App {
 	width: 25vw;
 	height: fit-content;
 	padding: 10px;
-	margin: 15px auto;
+	margin: 10px auto;
 	border: 1px solid #000000;
 	background-color: #ffffff;
 }
 
-/*Searchbar Component Styles:*/
+/*Searchbar component styles:*/
 .searchbar-container {
 	display: flex;
 	flex-direction: row;
 	width: 98%;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 }
 
 input[type="text"] {
@@ -40,52 +41,67 @@ input[type="text"] {
 	margin: auto;
 }
 
-/*Location Component Styles:*/
-.d2 {
+/*Location component styles:*/
+.location-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 3px; /*Temporary?*/
 	width: 98%;
-	margin: 0 auto 15px;
+	margin: 0 auto 5px;
+	background-color: blue; /*Temporary*/
+	border-radius: 3px; /*Temporary*/
 }
 
-.d2-1 {
-	width: 45%;
-	/* height: 7rem; */
-	display: inline-block;
+.location-container-child-1 {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.location-container-child-1 a {
+	text-decoration: none;
 }
 
 .location-heading {
 	font-size: 1.2rem;
 	font-weight: bold;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 }
 
 .location-date {
 	color: #555;
 	font-size: 1rem;
-	margin-bottom: 0;
+}
+
+.icon-info-container {
+	display: flex;
 }
 
 .location-icon {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	color: skyblue;
+	margin: 5px 0 5px;
 }
 
 .location-condition {
 	color: skyblue;
-	font-size: 0.9rem;
+	font-size: 1rem;
+	margin-left: 5px;
 }
 
-.d2-2 {
-	float: right;
+.location-container-child-2 {
+	width: 50%;
+	padding: 3px;
 }
 
 .location-image {
-	width: 7rem;
-	height: 7rem;
-	padding: 5px;
+	width: 100%; /*Temporary, make dimension match height equally as a square.*/
+	height: 100%;
 	border-radius: 5px;
 }
 
-/*WeatherTabs Component styles:*/
+/*WeatherTabs component styles:*/
 .d3 {
 	clear: both;
 	width: 98%;
@@ -185,20 +201,15 @@ input[type="text"] {
 }
 
 /*---------------------------------------------------*/
-@media screen and (min-width: 800px) {
-	.main-wrapper {
-		height: auto !important; /*added (23/02/20)*/
-		width: 25% !important; /*added (23/02/20)*/
-	}
-
-	.location-heading {
-		font-size: 1.2rem; /*added (23/02/20)*/
-		font-weight: bold; /*added (23/02/20)*/
-		margin-bottom: 0; /*added (23/02/20)*/
-	}
-
-	.location-image {
-		width: 6rem; /*added (23/02/20)*/
-		height: 6rem; /*added (23/02/20)*/
+/* Mobile device styles: */
+@media screen and (max-width: 420px) {
+	.App {
+		width: 100% !important;
 	}
 }
+
+/* @media screen and (max-width: 900px) {
+	.App {
+		width: 50% !important;
+	}
+} */
