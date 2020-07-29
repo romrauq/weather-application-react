@@ -12,14 +12,14 @@ body {
 .App {
 	width: 25vw;
 	height: fit-content;
-	padding: 10px;
-	margin: 10px auto;
+	padding: 5px;
+	margin: 0 auto;
 	border: 1px solid #000000;
 	background-color: #ffffff;
 }
 
 /*Searchbar component styles:*/
-.searchbar-container {
+.searchbar-component {
 	display: flex;
 	flex-direction: row;
 	width: 98%;
@@ -42,7 +42,7 @@ input[type="text"] {
 }
 
 /*Location component styles:*/
-.location-container {
+.location-component {
 	display: flex;
 	justify-content: space-between;
 	padding: 3px; /*Temporary?*/
@@ -102,35 +102,40 @@ input[type="text"] {
 }
 
 /*WeatherTabs component styles:*/
-.d3 {
-	clear: both;
-	width: 98%;
-	background-color: #5f9ea0;
-	margin: 0 auto 10px;
-	border-radius: 10px;
-}
-
-.d3-1 {
-	height: 60px;
+.weathertab-component {
 	display: flex;
-	justify-content: space-around;
-	margin: 5px auto;
+	width: 98%;
+	height: fit-content;
+	padding: 5px;
+	margin: 0 auto 10px;
+	border-radius: 3px;
+	background-color: #5f9ea0;
 }
 
-.weather-panel {
-	width: 36px;
-	height: 50px;
+.weather-tab {
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	height: fit-content;
 	color: white;
 	text-align: center;
 	font-size: 0.6rem;
-	margin: 5px auto;
-	border-radius: 0 0 10px 10px;
-	display: inline-block;
+	padding: 5px;
+	border-radius: 3px;
 }
 
-.icons {
-	color: white;
-	font-size: 1.1rem;
+.weather-tab:hover {
+	background-color: red;
+}
+
+.weather-tab p {
+	margin: 0;
+}
+
+.tab-icons {
+	color: ;
+	font-size: 1rem;
+	margin: 5px 0;
 }
 
 .line-divider {
