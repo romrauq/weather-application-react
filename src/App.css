@@ -13,7 +13,7 @@ body {
 	width: 25vw;
 	height: fit-content;
 	padding: 5px;
-	margin: 0 auto;
+	margin: 5px auto 0;
 	border: 1px solid #000000;
 	background-color: #ffffff;
 }
@@ -53,7 +53,7 @@ input[type="text"] {
 }
 
 .location-container-child-1 {
-	width: 50%;
+	width: 60%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -72,6 +72,7 @@ input[type="text"] {
 .location-date {
 	color: #555;
 	font-size: 1rem;
+	margin: 0;
 }
 
 .icon-info-container {
@@ -91,7 +92,7 @@ input[type="text"] {
 }
 
 .location-container-child-2 {
-	width: 50%;
+	width: 40%;
 	padding: 3px;
 }
 
