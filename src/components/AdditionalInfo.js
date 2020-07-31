@@ -1,25 +1,25 @@
 import React from "react";
 
-const GeneralInfo = () => {
+const AdditionalInfo = () => {
 	return (
-		<div className="general-info-component">
-			<p className="general-info-heading">Additional information:</p>
-			<div className="general-info-sections">
-				<div className="general-info-section">
-					<p className="general-info-title">Precipitation</p>
-					<p className="general-info-status">3%</p>
+		<div className="additional-info-component">
+			<p className="additional-info-heading">Additional information:</p>
+			<div className="additional-info-sections">
+				<div className="additional-info-section">
+					<p className="additional-info-title">Precipitation</p>
+					<p className="additional-info-status">3%</p>
 				</div>
-				<div className="general-info-section">
-					<p className="general-info-title">Humidity</p>
-					<p className="general-info-status">74%</p>
+				<div className="additional-info-section">
+					<p className="additional-info-title">Humidity</p>
+					<p className="additional-info-status">74%</p>
 				</div>
-				<div className="general-info-section">
-					<p className="general-info-title">Wind Speed</p>
-					<p className="general-info-status">10Km/h</p>
+				<div className="additional-info-section">
+					<p className="additional-info-title">Wind Speed</p>
+					<p className="additional-info-status">10Km/h</p>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default GeneralInfo;
+export default AdditionalInfo;

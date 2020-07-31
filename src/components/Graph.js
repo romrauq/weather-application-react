@@ -2,8 +2,8 @@ import React from "react";
 
 const Graph = () => {
 	return (
-		<div className="d6">
-			<p className="graph-placeholder">[Graph Goes Here]</p>
+		<div className="graph-component">
+			<p className="graph-content">[Graph Displays Here]</p>
 		</div>
 	);
 };

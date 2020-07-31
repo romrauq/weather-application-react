@@ -2,21 +2,15 @@ import React from "react";
 
 const Temperature = () => {
 	return (
-		<div className="d5">
-			<div className="d5-1">
-				<p className="section-heading">Temperature</p>
+		<div className="temperature-component">
+			<div>
+				<p className="temperature-heading">Temperature</p>
 			</div>
-			<div className="d5-2">
-				<select className="options">
-					<option className="" value="item-1">
-						Yesterday
-					</option>
-					<option className="" value="item-2">
-						Last Week
-					</option>
-					<option className="" value="item-3">
-						Last Month
-					</option>
+			<div>
+				<select className="dropdown-options">
+					<option value="yesterday">Yesterday</option>
+					<option value="last_week">Last Week</option>
+					<option value="last_month">Last Month</option>
 				</select>
 			</div>
 		</div>
