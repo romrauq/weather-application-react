@@ -23,7 +23,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	width: 98%;
-	margin: 0 auto 5px;
+	margin: 5px auto 5px;
 }
 
 input[type="text"] {
@@ -47,6 +47,7 @@ input[type="text"] {
 	justify-content: space-between;
 	padding: 3px; /*Temporary?*/
 	width: 98%;
+	padding: 5px;
 	margin: 0 auto 5px;
 	background-color: blue; /*Temporary*/
 	border-radius: 3px; /*Temporary*/
@@ -64,13 +65,15 @@ input[type="text"] {
 }
 
 .location-heading {
+	color: white;
 	font-size: 1.2rem;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
 
 .location-date {
-	color: #555;
+	color: white;
+	/* color: #555; */
 	font-size: 1rem;
 	margin: 0;
 }
@@ -93,13 +96,12 @@ input[type="text"] {
 
 .location-container-child-2 {
 	width: 40%;
-	padding: 3px;
 }
 
 .location-image {
 	width: 100%; /*Temporary, make dimension match height equally as a square.*/
 	height: 100%;
-	border-radius: 5px;
+	/* border-radius: 3px; */
 }
 
 /*WeatherTabs component styles:*/
@@ -123,6 +125,7 @@ input[type="text"] {
 	font-size: 0.7rem;
 	padding: 5px;
 	border-radius: 3px;
+	cursor: pointer;
 }
 
 .weather-tab:hover {
@@ -134,90 +137,83 @@ input[type="text"] {
 }
 
 .tab-icons {
-	color: ;
 	font-size: 1rem;
 	margin: 5px 0;
 }
 
-.line-divider {
-	width: 98%;
-	margin: 10px auto;
-}
-
 /*GeneralInfo component styles:*/
-.general-info-component {
+.additional-info-component {
 	width: 98%;
 	padding: 5px;
 	margin: 0px auto 5px;
 	background-color: pink;
+	border-radius: 3px;
 }
 
-.general-info-heading {
+.additional-info-heading {
 	font-size: 1.1rem;
 	font-weight: bold;
 	margin: 0;
 }
 
-.general-info-sections {
+.additional-info-sections {
 	display: flex;
 	justify-content: space-between;
 }
 
-.general-info-title {
+.additional-info-title {
 	font-size: 1rem;
 	text-align: center;
 	margin: 0;
 }
 
-.general-info-status {
+.additional-info-status {
 	font-size: 0.8rem;
 	font-weight: bold;
 	text-align: center;
 	margin: 0;
 }
-
-/* .line-divider {
-	width: 98%;
-	margin: 5px auto 5px;
-} */
 
 /*FIFTH DIV ELEMENTS AND CHILDREN*/
-.d5 {
+.temperature-component {
 	width: 98%;
-	height: 1.4rem;
-	margin: 0px auto 10px;
-
+	height: fit-content;
+	padding: 10px 5px;
+	margin: 0px auto 5px;
 	display: flex;
 	justify-content: space-between;
+	background-color: limegreen;
+	border-radius: 3px;
 }
 
-.section-heading {
-	font-size: 1rem;
+.temperature-heading {
+	font-size: 1.1rem;
 	font-weight: bold;
+	margin: 0;
 }
 
-.options {
-	font-size: 0.8rem;
+.dropdown-options {
+	font-size: 0.9rem;
 	font-weight: bold;
 	font-family: Arial;
+	padding: 3px;
 	border-radius: 5px;
 }
 
 /*SIXTH DIV ELEMENTS AND CHILDREN*/
-.d6 {
+.graph-component {
 	width: 98%;
 	height: 35vh;
-	margin: 0px auto 15px;
-	border: dashed 1px #808080;
-	border-radius: 5px;
+	margin: 0px auto 5px;
+	border: solid 1px #808080;
+	border-radius: 3px;
 }
 
-.graph-placeholder {
+.graph-content {
 	position: relative;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-weight: bold;
 	text-align: center;
 }
 
