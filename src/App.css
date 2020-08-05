@@ -5,20 +5,20 @@
 }
 
 body {
-	background-color: #f5f5dc;
+	background-color: grey;
 }
 
-/* Main app container styles:  */
+/* ----------------------------------------- "Main" App component styles:  */
 .App {
 	width: 25vw;
 	height: fit-content;
 	padding: 5px;
-	margin: 5px auto 0;
-	border: 1px solid #000000;
+	margin: 20px auto 0;
+	/* border: 1px solid #000000; */
 	background-color: #ffffff;
 }
 
-/*Searchbar component styles:*/
+/* ----------------------------------------- Searchbar component styles:*/
 .searchbar-component {
 	display: flex;
 	flex-direction: row;
@@ -41,7 +41,7 @@ input[type="text"] {
 	margin: auto;
 }
 
-/*Location component styles:*/
+/* ----------------------------------------- Location component styles:*/
 .location-component {
 	display: flex;
 	justify-content: space-between;
@@ -104,7 +104,7 @@ input[type="text"] {
 	/* border-radius: 3px; */
 }
 
-/*WeatherTabs component styles:*/
+/* ----------------------------------------- WeatherTabs component styles:*/
 .weathertab-component {
 	display: flex;
 	width: 98%;
@@ -141,7 +141,7 @@ input[type="text"] {
 	margin: 5px 0;
 }
 
-/*GeneralInfo component styles:*/
+/* ----------------------------------------- GeneralInfo component styles:*/
 .additional-info-component {
 	width: 98%;
 	padding: 5px;
@@ -174,7 +174,7 @@ input[type="text"] {
 	margin: 0;
 }
 
-/*FIFTH DIV ELEMENTS AND CHILDREN*/
+/* ----------------------------------------- Temperature component styles:*/
 .temperature-component {
 	width: 98%;
 	height: fit-content;
@@ -200,7 +200,7 @@ input[type="text"] {
 	border-radius: 5px;
 }
 
-/*SIXTH DIV ELEMENTS AND CHILDREN*/
+/* ----------------------------------------- Graph component styles:*/
 .graph-component {
 	width: 98%;
 	height: 35vh;
