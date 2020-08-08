@@ -95,11 +95,12 @@ input[type="text"] {
 }
 
 .location-container-child-2 {
-	width: 40%;
+	width: 100px;
+	height: 100px;
 }
 
 .location-image {
-	width: 100%; /*Temporary, make dimension match height equally as a square.*/
+	width: 100%;
 	height: 100%;
 	/* border-radius: 3px; */
 }
