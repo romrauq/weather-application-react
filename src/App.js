@@ -10,14 +10,17 @@ import Graph from "./components/Graph";
 function App() {
 	return (
 		<div className="App">
-			{/*Insert components here (below)*/}
 			<SearchBar />
-			<LocationInfo />
+			<LocationInfo
+				country="Ghana"
+				city="Greater Accra"
+				date={new Date().toDateString()}
+				alt="Location image"
+			/>
 			<WeatherTabs />
 			<AdditionalInfo />
 			<Temperature />
 			<Graph />
-			{/*Insert components here (above)*/}
 		</div>
 	);
 }
