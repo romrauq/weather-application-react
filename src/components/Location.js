@@ -1,6 +1,14 @@
 import React from "react";
 
+const icon = {
+	cloudy: "fas fa-cloud tab-icons",
+	rain: "fas fa-cloud-showers-heavy tab-icons",
+	cloud_sun: "fas fa-cloud-sun tab-icons",
+	sunny: "fas fa-sun tab-icons",
+};
+
 const location_image = "./resources/images/location-image.jpg";
+
 const Location = (props) => {
 	return (
 		<div className="location-component">
@@ -15,7 +23,7 @@ const Location = (props) => {
 				<p className="location-date">{props.date}</p>
 
 				<div className="icon-info-container">
-					<i className="fas fa-cloud location-icon"></i>
+					<i className={`${icon.cloudy} location-icon`}></i>
 					<span className="location-condition">Cloudy</span>
 				</div>
 			</div>
