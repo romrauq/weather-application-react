@@ -11,15 +11,20 @@ function App() {
 	return (
 		<div className="App">
 			<SearchBar />
+
 			<LocationInfo
 				country="Ghana"
 				city="Greater Accra"
 				date={new Date().toDateString()}
 				alt="Location image"
 			/>
+
 			<WeatherTabs />
-			<AdditionalInfo />
+
+			<AdditionalInfo precipitation="3%" humidity="74" windspeed="10" />
+
 			<Temperature />
+
 			<Graph />
 		</div>
 	);
