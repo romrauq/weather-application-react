@@ -2,7 +2,15 @@ import React from "react";
 import WeatherTabIcon from "./WeatherTabIcon";
 
 let hour = new Date().getHours();
-let min = new Date().getMinutes();
+// let min = new Date().getMinutes();
+
+//Condition to set AM or PM to time:
+let amPm = "";
+if (hour >= 12) {
+	amPm = "pm";
+} else {
+	amPm = "am";
+}
 
 const icon = {
 	cloudy: "fas fa-cloud tab-icons",
@@ -14,28 +22,28 @@ const icon = {
 const WeatherTabs = () => {
 	return (
 		<div className="weathertab-component">
+			<WeatherTabIcon time={hour} ampm={amPm} icon={icon.cloudy} temp="24 C" />
 			<WeatherTabIcon
-				time={`${hour + 0}:${min}`}
-				icon={icon.cloudy}
-				temp="24 C"
-			/>
-			<WeatherTabIcon
-				time={`${hour + 1}:${min}`}
+				time={hour + 1}
+				ampm={amPm}
 				icon={icon.cloud_sun}
 				temp="20 C"
 			/>
 			<WeatherTabIcon
-				time={`${hour + 2}:${min}`}
+				time={hour + 2}
+				ampm={amPm}
 				icon={icon.rain}
 				temp="25 C"
 			/>
 			<WeatherTabIcon
-				time={`${hour + 3}:${min}`}
+				time={hour + 3}
+				ampm={amPm}
 				icon={icon.cloud_sun}
 				temp="24 C"
 			/>
 			<WeatherTabIcon
-				time={`${hour + 4}:${min}`}
+				time={hour + 4}
+				ampm={amPm}
 				icon={icon.sunny}
 				temp="22 C"
 			/>
