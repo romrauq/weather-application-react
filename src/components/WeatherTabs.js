@@ -4,6 +4,13 @@ import WeatherTabIcon from "./WeatherTabIcon";
 let hour = new Date().getHours();
 // let min = new Date().getMinutes();
 
+//Set time to 12 hour format:
+function setTime(val) {
+	if (val > 12) {
+		return val % 12;
+	}
+}
+
 //Condition to set AM or PM to time:
 let amPm = "";
 if (hour >= 12) {
@@ -22,27 +29,32 @@ const icon = {
 const WeatherTabs = () => {
 	return (
 		<div className="weathertab-component">
-			<WeatherTabIcon time={hour} ampm={amPm} icon={icon.cloudy} temp="24 C" />
 			<WeatherTabIcon
-				time={hour + 1}
+				time={setTime(hour)}
+				ampm={amPm}
+				icon={icon.cloudy}
+				temp="24 C"
+			/>
+			<WeatherTabIcon
+				time={setTime(hour + 1)}
 				ampm={amPm}
 				icon={icon.cloud_sun}
 				temp="20 C"
 			/>
 			<WeatherTabIcon
-				time={hour + 2}
+				time={setTime(hour + 2)}
 				ampm={amPm}
 				icon={icon.rain}
 				temp="25 C"
 			/>
 			<WeatherTabIcon
-				time={hour + 3}
+				time={setTime(hour + 3)}
 				ampm={amPm}
 				icon={icon.cloud_sun}
 				temp="24 C"
 			/>
 			<WeatherTabIcon
-				time={hour + 4}
+				time={setTime(hour + 4)}
 				ampm={amPm}
 				icon={icon.sunny}
 				temp="22 C"
