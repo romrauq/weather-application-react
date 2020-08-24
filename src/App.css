@@ -32,6 +32,7 @@ input[type="text"] {
 	padding: 5px 5px;
 	border: 1px solid rgba(135, 206, 235, 0.7);
 	border-radius: 3px;
+	outline: none;
 }
 
 .search-icon {
