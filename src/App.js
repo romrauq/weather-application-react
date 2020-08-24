@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import LocationInfo from "./components/Location";
@@ -7,27 +7,43 @@ import AdditionalInfo from "./components/AdditionalInfo";
 import Temperature from "./components/Temperature";
 import Graph from "./components/Graph";
 
-function App() {
-	return (
-		<div className="App">
-			<SearchBar />
+class App extends Component {
+	state = {
+		country: "Ghana",
+		city: "Greater Accra",
+		date: new Date().toDateString(),
+		img_alt: "Location Image Details",
+		precipitation: 3,
+		humidity: 74,
+		windspeed: 10,
+	};
 
-			<LocationInfo
-				country="Ghana"
-				city="Greater Accra"
-				date={new Date().toDateString()}
-				alt="Location image"
-			/>
+	render() {
+		return (
+			<div className="App">
+				<SearchBar />
 
-			<WeatherTabs />
+				<LocationInfo
+					country={this.state.country}
+					city={this.state.city}
+					date={this.state.date}
+					alt={this.state.img_alt}
+				/>
 
-			<AdditionalInfo precipitation="3%" humidity="74" windspeed="10" />
+				<WeatherTabs />
 
-			<Temperature />
+				<AdditionalInfo
+					precipitation={this.state.precipitation}
+					humidity={this.state.humidity}
+					windspeed={this.state.windspeed}
+				/>
 
-			<Graph />
-		</div>
-	);
+				<Temperature />
+
+				<Graph />
+			</div>
+		);
+	}
 }
 
 export default App;
