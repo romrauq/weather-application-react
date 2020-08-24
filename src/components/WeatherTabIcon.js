@@ -8,7 +8,7 @@ const WeatherTabIcon = (props) => {
 				{props.ampm}
 			</p>
 			<i className={props.icon}></i>
-			<p>{props.temp}</p>
+			<p>{props.temp}&#8451;</p>
 		</div>
 	);
 };

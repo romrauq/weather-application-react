@@ -28,36 +28,36 @@ const icon = {
 
 const WeatherTabs = () => {
 	return (
-		<div className="weathertab-component">
+		<div className="weathertabs-component">
 			<WeatherTabIcon
 				time={setTime(hour)}
 				ampm={amPm}
 				icon={icon.cloudy}
-				temp="24 C"
+				temp={24}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 1)}
 				ampm={amPm}
 				icon={icon.cloud_sun}
-				temp="20 C"
+				temp={20}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 2)}
 				ampm={amPm}
 				icon={icon.rain}
-				temp="25 C"
+				temp={25}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 3)}
 				ampm={amPm}
 				icon={icon.cloud_sun}
-				temp="24 C"
+				temp={24}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 4)}
 				ampm={amPm}
 				icon={icon.sunny}
-				temp="22 C"
+				temp={22}
 			/>
 		</div>
 	);

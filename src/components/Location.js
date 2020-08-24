@@ -15,7 +15,7 @@ const Location = (props) => {
 			<div className="location-component-child-1">
 				<a href="location.html">
 					<h1 className="location-heading">
-						{props.country}, <br />
+						{props.country},<br />
 						{props.city}
 					</h1>
 				</a>
@@ -23,7 +23,7 @@ const Location = (props) => {
 				<p className="location-date">{props.date}</p>
 
 				<div className="icon-info-container">
-					<i className={`${icon.cloudy} location-icon`}></i>
+					<i className={icon.cloudy}></i>
 					<span className="location-condition">Cloudy</span>
 				</div>
 			</div>

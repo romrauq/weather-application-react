@@ -7,7 +7,7 @@ const AdditionalInfo = (props) => {
 			<div className="additional-info-sections">
 				<div className="additional-info-section">
 					<p className="additional-info-title">Precipitation</p>
-					<p className="additional-info-status">{props.precipitation}</p>
+					<p className="additional-info-status">{props.precipitation}%</p>
 				</div>
 				<div className="additional-info-section">
 					<p className="additional-info-title">Humidity</p>
