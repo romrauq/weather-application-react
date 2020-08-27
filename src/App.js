@@ -9,6 +9,7 @@ import Graph from "./components/Graph";
 
 class App extends Component {
 	state = {
+		searchText: "Accra",
 		country: "Ghana",
 		city: "Greater Accra",
 		date: new Date().toDateString(),
@@ -17,6 +18,29 @@ class App extends Component {
 		humidity: 74,
 		windspeed: 10,
 	};
+
+	// Fetch APIs to run upon main application page loads:
+	componentDidMount() {
+		// 1st fetch() passes a string value from state.searchText to retrieve location Key:
+		fetch(
+			`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&q=${this.state.searchText}`
+		)
+			.then(function (res) {
+				return res.json();
+			})
+			.then(function (data) {
+				// 2nd fetch has location Key passed through it retrieved from the previous fetch response to retrieve 12 Hour weather data:
+				fetch(
+					`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${data[0].Key}?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=false`
+				)
+					.then(function (res) {
+						return res.json();
+					})
+					.then(function (data) {
+						console.log(data);
+					});
+			});
+	}
 
 	render() {
 		return (
