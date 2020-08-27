@@ -196,9 +196,9 @@ input[type="text"] {
 	}
 }
 /* Tablet device size styles */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
 	.App {
-		width: 50vw !important;
+		width: 45vw !important;
 		margin: 0 auto;
 	}
-}
+} */
