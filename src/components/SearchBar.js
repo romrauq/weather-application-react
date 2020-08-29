@@ -6,12 +6,17 @@ class searchBar extends Component {
 	render() {
 		return (
 			<div className="searchbar-component">
-				<input type="text" placeholder="Search Location Here" />
+				<input
+					type="text"
+					placeholder="Search Location Here"
+					onChange={this.props.handleChange}
+				/>
+
 				<i
 					id="search-button"
 					className="fas fa-search search-icon"
 					type="button"
-					onClick={this.props.searchText}
+					onClick={this.props.searchAction}
 				></i>
 			</div>
 		);
