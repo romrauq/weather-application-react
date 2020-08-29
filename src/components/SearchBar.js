@@ -1,16 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 
-const SearchBar = () => {
-	return (
-		<div className="searchbar-component">
-			<input type="text" placeholder="Search Location Here" />
-			<i
-				id="search-button"
-				className="fas fa-search search-icon"
-				type="button"
-			></i>
-		</div>
-	);
-};
+class searchBar extends Component {
+	state = {};
 
-export default SearchBar;
+	render() {
+		return (
+			<div className="searchbar-component">
+				<input type="text" placeholder="Search Location Here" />
+				<i
+					id="search-button"
+					className="fas fa-search search-icon"
+					type="button"
+					onClick={this.props.searchText}
+				></i>
+			</div>
+		);
+	}
+}
+
+export default searchBar;
