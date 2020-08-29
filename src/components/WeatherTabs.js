@@ -8,6 +8,8 @@ let hour = new Date().getHours();
 function setTime(val) {
 	if (val > 12) {
 		return val % 12;
+	} else {
+		return val;
 	}
 }
 
