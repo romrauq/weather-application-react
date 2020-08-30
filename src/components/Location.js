@@ -24,7 +24,7 @@ const Location = (props) => {
 
 				<div className="icon-info-container">
 					<i className={icon.cloudy}></i>
-					<span className="location-condition">Cloudy</span>
+					<span className="location-condition">{props.location_condition}</span>
 				</div>
 			</div>
 
