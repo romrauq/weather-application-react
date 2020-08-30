@@ -142,12 +142,12 @@ input[type="text"] {
 
 .additional-info-title {
 	font-size: 1rem;
+	font-weight: bolder;
 	text-align: center;
 	margin: 0;
 }
 .additional-info-status {
 	font-size: 0.8rem;
-	font-weight: bold;
 	text-align: center;
 	margin: 0;
 }
