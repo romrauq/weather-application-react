@@ -1,10 +1,10 @@
 import React from "react";
 import WeatherTabIcon from "./WeatherTabIcon";
 
+// Creating a variable which contains the current hour value:
 let hour = new Date().getHours();
-// let min = new Date().getMinutes();
 
-//Set time to 12 hour format:
+// Function to set time to 12 hour format:
 function setTime(val) {
 	if (val > 12) {
 		return val % 12;
@@ -13,7 +13,7 @@ function setTime(val) {
 	}
 }
 
-//Condition to set AM or PM to time:
+//Condition to suffix "AM" or "PM" to time:
 let amPm = "";
 if (hour >= 12) {
 	amPm = "pm";
