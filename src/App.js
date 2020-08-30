@@ -55,7 +55,7 @@ class App extends Component {
 			<div className="App">
 				<SearchBar
 					handleChange={this.handleChange}
-					searchText={this.searchAction}
+					searchAction={this.searchAction}
 				/>
 
 				<LocationInfo
