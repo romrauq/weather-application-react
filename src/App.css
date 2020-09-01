@@ -197,25 +197,25 @@ input[type="text"] {
 	text-align: center;
 }
 /*-------------------------------------Media Queries:*/
+/* Laptop screen size styles: */
+@media screen and (max-width: 1024px) {
+	.App {
+		width: 35vw;
+		margin: 10px auto 0;
+	}
+}
+/* Tablet device size styles */
+@media screen and (max-width: 768px) {
+	.App {
+		width: 45vw;
+		margin: 10px auto 0;
+	}
+}
 /* Mobile device size styles: */
 @media screen and (max-width: 568px) {
 	.App {
 		width: 100vw;
 		height: 100vh;
-		margin: 0 auto;
+		margin: 0;
 	}
 }
-/* Tablet device size styles */
-/* @media screen and (min-width: 768px) {
-	.App {
-		width: fit-content;
-		margin: 10px auto 0;
-	}
-} */
-/* Medium sized laptop screen size styles: */
-/* @media screen and (min-width: 1024px) {
-	.App {
-		width: fit-content;
-		margin: 10px auto 0;
-	}
-} */
