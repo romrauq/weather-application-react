@@ -1,26 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 
-class searchBar extends Component {
-	state = {};
+const SearchBar = (props) => {
+	return (
+		<div className="searchbar-component">
+			<input
+				type="text"
+				placeholder="Search Location Here"
+				onChange={props.handleChange}
+			/>
 
-	render() {
-		return (
-			<div className="searchbar-component">
-				<input
-					type="text"
-					placeholder="Search Location Here"
-					onChange={this.props.handleChange}
-				/>
+			<i
+				id="search-button"
+				className="fas fa-search search-icon"
+				type="button"
+				onClick={props.searchAction}
+			></i>
+		</div>
+	);
+};
 
-				<i
-					id="search-button"
-					className="fas fa-search search-icon"
-					type="button"
-					onClick={this.props.searchAction}
-				></i>
-			</div>
-		);
-	}
-}
-
-export default searchBar;
+export default SearchBar;
