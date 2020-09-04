@@ -46,11 +46,11 @@ class App extends Component {
 				})
 				.then(function (data) {
 					console.log(data);
-					// this.setState({ country: data[0].Country.LocalizedName });
-					this.setState({
-						country: this.data[0].Country.LocalizedName,
-						city: this.data[0].LocalizedName,
-					});
+					// this.setState({
+					// 	country: data[0].Country.LocalizedName,
+					// 	city: data[0].LocalizedName,
+					// });
+					
 					// 2nd fetch request retrieves 12 Hour weather:
 					fetch(
 						`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${data[0].Key}?apikey=lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=true`
@@ -60,6 +60,14 @@ class App extends Component {
 						})
 						.then(function (weatherData) {
 							console.log(weatherData);
+							//Set the respective state values using the data retrieved from 2nd fetch():
+							// this.setState({
+							// 	location_icon: weatherData[0].WeatherIcon,
+							// 	location_condition: weatherData[0].IconPhrase,
+							// 	precipitation: weatherData[0].PrecipitationProbability,
+							// 	humidity: weatherData[0].RelativeHumidity,
+							// 	windspeed: weatherData[0].Wind.Speed.Value,
+							// });
 						});
 				});
 		} else {
