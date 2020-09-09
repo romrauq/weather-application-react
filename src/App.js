@@ -34,47 +34,7 @@ class App extends Component {
 	};
 
 	// Function(s) to be executed when search button is clicked:
-	searchAction = () => {
-		if (this.state.search_query !== "") {
-			// 1st fetch() request passes searched text value from the state.search_query
-			// to fetch data containing the a location Key from the HTTP request's response data:
-			fetch(
-				`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&q=${this.state.search_query}`
-			)
-				.then(function (response) {
-					return response.json();
-				})
-				.then(function (data) {
-					console.log(data);
-					// this.setState({
-					// 	country: data[0].Country.LocalizedName,
-					// 	city: data[0].LocalizedName,
-					// });
-					
-					// 2nd fetch request retrieves 12 Hour weather:
-					fetch(
-						`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${data[0].Key}?apikey=lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=true`
-					)
-						.then(function (response) {
-							return response.json();
-						})
-						.then(function (weatherData) {
-							console.log(weatherData);
-							//Set the respective state values using the data retrieved from 2nd fetch():
-							// this.setState({
-							// 	location_icon: weatherData[0].WeatherIcon,
-							// 	location_condition: weatherData[0].IconPhrase,
-							// 	precipitation: weatherData[0].PrecipitationProbability,
-							// 	humidity: weatherData[0].RelativeHumidity,
-							// 	windspeed: weatherData[0].Wind.Speed.Value,
-							// });
-						});
-				});
-		} else {
-			// return null;
-			alert("Enter your location in the text area before searching");
-		}
-	};
+	searchAction = () => {};
 
 	render() {
 		return (
