@@ -25,3 +25,4 @@ yarn-error.log*
 # personal ingnore files:
 autocomplete_search_response.json
 12_hours_of_hourly_forecasts_response.json
+App(refer).js
