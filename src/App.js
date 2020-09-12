@@ -6,6 +6,7 @@ import WeatherTabs from "./components/WeatherTabs";
 import AdditionalInfo from "./components/AdditionalInfo";
 import Temperature from "./components/Temperature";
 import Graph from "./components/Graph";
+import Axios from "axios";
 
 class App extends Component {
 	state = {
@@ -34,7 +35,9 @@ class App extends Component {
 	};
 
 	// Function(s) to be executed when search button is clicked:
-	searchAction = () => {};
+	searchAction = () => {
+		Axios.get();
+	};
 
 	render() {
 		return (
