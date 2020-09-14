@@ -11,6 +11,7 @@ import Axios from "axios";
 class App extends Component {
 	state = {
 		search_query: "",
+		location_key: {},
 		country: "{Country}",
 		city: "{City}",
 		date: new Date().toDateString(),
@@ -36,7 +37,21 @@ class App extends Component {
 
 	// Function(s) to be executed when search button is clicked:
 	searchAction = () => {
-		Axios.get();
+		Axios.get(
+			`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&q=${this.state.search_query}`
+		).then((res) => {
+			//Getting the location key & setting its value to the state:
+			// console.log(res.data[0].Country.LocalizedName);
+			// console.log(res.data[0].LocalizedName);
+			this.setState({
+				location_key: res.data[0].Key,
+				country: res.data[0].Country.LocalizedName,
+				city: res.data[0].LocalizedName,
+			});
+			Axios.get(
+				`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=true`
+			).then((res) => console.log(res.data[0]));
+		});
 	};
 
 	render() {
