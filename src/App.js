@@ -16,8 +16,30 @@ class App extends Component {
 		city: "{City}",
 		date: new Date().toDateString(),
 		img_alt: "{Location Image Name}",
-		location_icon: "",
-		location_condition: "Cloudy",
+		location_icon: {},
+		location_condition: "",
+		weather_tabs: {
+			tab_0: {
+				tab_icon: [],
+				temperature: [],
+			},
+			tab_1: {
+				tab_icon: [],
+				temperature: [],
+			},
+			tab_2: {
+				tab_icon: [],
+				temperature: [],
+			},
+			tab_3: {
+				tab_icon: [],
+				temperature: [],
+			},
+			tab_4: {
+				tab_icon: [],
+				temperature: [],
+			},
+		},
 		precipitation: 3,
 		humidity: 74,
 		windspeed: 10,
@@ -50,7 +72,26 @@ class App extends Component {
 			});
 			Axios.get(
 				`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=true`
-			).then((res) => console.log(res.data[0]));
+			).then((res) => {
+				// console.log(res.data[0]);
+				this.setState({
+					location_icon: res.data[0].WeatherIcon,
+					location_condition: res.data[0].IconPhrase,
+					// weather_tabs.tab_0.tab_icon: res.data[0].WeatherIcon,
+					// weather_tabs.tab_1.tab_icon: res.data[1].WeatherIcon,
+					// weather_tabs.tab_2.tab_icon: res.data[2].WeatherIcon,
+					// weather_tabs.tab_3.tab_icon: res.data[3].WeatherIcon,
+					// weather_tabs.tab_4.tab_icon: res.data[4].WeatherIcon,
+					// weather_tabs.tab_0.temperature: res.data[0].Temperature.Value,
+					// weather_tabs.tab_1.temperature: res.data[1].Temperature.Value,
+					// weather_tabs.tab_2.temperature: res.data[2].Temperature.Value,
+					// weather_tabs.tab_3.temperature: res.data[3].Temperature.Value,
+					// weather_tabs.tab_4.temperature: res.data[4].Temperature.Value,
+					precipitation: res.data[0].PrecipitationProbability,
+					Humidity: res.data[0].RelativeHumidity,
+					windspeed: res.data[0].Wind.Speed.Value,
+				});
+			});
 		});
 	};
 
@@ -72,7 +113,18 @@ class App extends Component {
 					location_condition={this.state.location_condition}
 				/>
 
-				<WeatherTabs />
+				<WeatherTabs
+					weather_icon_0={this.state.weather_tabs.tab_0.tab_icon}
+					weather_temp_0={this.state.weather_tabs.tab_0.temperature}
+					weather_icon_1={this.state.weather_tabs.tab_1.tab_icon}
+					weather_temp_1={this.state.weather_tabs.tab_1.temperature}
+					weather_icon_2={this.state.weather_tabs.tab_2.tab_icon}
+					weather_temp_2={this.state.weather_tabs.tab_2.temperature}
+					weather_icon_3={this.state.weather_tabs.tab_3.tab_icon}
+					weather_temp_3={this.state.weather_tabs.tab_3.temperature}
+					weather_icon_4={this.state.weather_tabs.tab_4.tab_icon}
+					weather_temp_4={this.state.weather_tabs.tab_4.temperature}
+				/>
 
 				<AdditionalInfo
 					precipitation={this.state.precipitation}
