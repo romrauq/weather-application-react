@@ -12,34 +12,22 @@ class App extends Component {
 	state = {
 		search_query: "",
 		location_key: {},
-		country: "{Country}",
-		city: "{City}",
+		country: "Your Country",
+		city: "Your City",
 		date: new Date().toDateString(),
 		img_alt: "{Location Image Name}",
 		location_icon: {},
 		location_condition: "",
-		weather_tabs: {
-			tab_0: {
-				tab_icon: [],
-				temperature: [],
-			},
-			tab_1: {
-				tab_icon: [],
-				temperature: [],
-			},
-			tab_2: {
-				tab_icon: [],
-				temperature: [],
-			},
-			tab_3: {
-				tab_icon: [],
-				temperature: [],
-			},
-			tab_4: {
-				tab_icon: [],
-				temperature: [],
-			},
-		},
+		tab_icon_0: 0,
+		tab_temp_0: 0,
+		tab_icon_1: 0,
+		tab_temp_1: 0,
+		tab_icon_2: 0,
+		tab_temp_2: 0,
+		tab_icon_3: 0,
+		tab_temp_3: 0,
+		tab_icon_4: 0,
+		tab_temp_4: 0,
 		precipitation: 3,
 		humidity: 74,
 		windspeed: 10,
@@ -62,9 +50,7 @@ class App extends Component {
 		Axios.get(
 			`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&q=${this.state.search_query}`
 		).then((res) => {
-			//Getting the location key & setting its value to the state:
-			// console.log(res.data[0].Country.LocalizedName);
-			// console.log(res.data[0].LocalizedName);
+			// Setting location_key, country & city values to the state:
 			this.setState({
 				location_key: res.data[0].Key,
 				country: res.data[0].Country.LocalizedName,
@@ -77,16 +63,16 @@ class App extends Component {
 				this.setState({
 					location_icon: res.data[0].WeatherIcon,
 					location_condition: res.data[0].IconPhrase,
-					// weather_tabs.tab_0.tab_icon: res.data[0].WeatherIcon,
-					// weather_tabs.tab_1.tab_icon: res.data[1].WeatherIcon,
-					// weather_tabs.tab_2.tab_icon: res.data[2].WeatherIcon,
-					// weather_tabs.tab_3.tab_icon: res.data[3].WeatherIcon,
-					// weather_tabs.tab_4.tab_icon: res.data[4].WeatherIcon,
-					// weather_tabs.tab_0.temperature: res.data[0].Temperature.Value,
-					// weather_tabs.tab_1.temperature: res.data[1].Temperature.Value,
-					// weather_tabs.tab_2.temperature: res.data[2].Temperature.Value,
-					// weather_tabs.tab_3.temperature: res.data[3].Temperature.Value,
-					// weather_tabs.tab_4.temperature: res.data[4].Temperature.Value,
+					tab_icon_0: res.data[0].WeatherIcon,
+					tab_temp_0: res.data[1].WeatherIcon,
+					tab_icon_1: res.data[2].WeatherIcon,
+					tab_temp_1: res.data[3].WeatherIcon,
+					tab_icon_2: res.data[4].WeatherIcon,
+					tab_temp_2: res.data[0].Temperature.Value,
+					tab_icon_3: res.data[1].Temperature.Value,
+					tab_temp_3: res.data[2].Temperature.Value,
+					tab_icon_4: res.data[3].Temperature.Value,
+					tab_temp_4: res.data[4].Temperature.Value,
 					precipitation: res.data[0].PrecipitationProbability,
 					Humidity: res.data[0].RelativeHumidity,
 					windspeed: res.data[0].Wind.Speed.Value,
@@ -114,16 +100,16 @@ class App extends Component {
 				/>
 
 				<WeatherTabs
-					weather_icon_0={this.state.weather_tabs.tab_0.tab_icon}
-					weather_temp_0={this.state.weather_tabs.tab_0.temperature}
-					weather_icon_1={this.state.weather_tabs.tab_1.tab_icon}
-					weather_temp_1={this.state.weather_tabs.tab_1.temperature}
-					weather_icon_2={this.state.weather_tabs.tab_2.tab_icon}
-					weather_temp_2={this.state.weather_tabs.tab_2.temperature}
-					weather_icon_3={this.state.weather_tabs.tab_3.tab_icon}
-					weather_temp_3={this.state.weather_tabs.tab_3.temperature}
-					weather_icon_4={this.state.weather_tabs.tab_4.tab_icon}
-					weather_temp_4={this.state.weather_tabs.tab_4.temperature}
+					weather_icon_0={this.state.tab_icon_0}
+					weather_temp_0={this.state.tab_temp_0}
+					weather_icon_1={this.state.tab_icon_1}
+					weather_temp_1={this.state.tab_temp_1}
+					weather_icon_2={this.state.tab_icon_2}
+					weather_temp_2={this.state.tab_temp_2}
+					weather_icon_3={this.state.tab_icon_3}
+					weather_temp_3={this.state.tab_temp_3}
+					weather_icon_4={this.state.tab_icon_4}
+					weather_temp_4={this.state.tab_temp_4}
 				/>
 
 				<AdditionalInfo
