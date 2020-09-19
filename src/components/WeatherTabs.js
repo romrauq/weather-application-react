@@ -32,31 +32,31 @@ const WeatherTabs = (props) => {
 			<WeatherTabIcon
 				time={setTime(hour)}
 				ampm={setAMPM(hour)}
-				icon={props.icon_0} // Replace with {props.weather_icon_0}
+				icon={props.icon_0}
 				temp={props.temp_0}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 1)}
 				ampm={setAMPM(hour + 1)}
-				icon={props.icon_1} // Replace with {props.weather_icon_1}
+				icon={props.icon_1}
 				temp={props.temp_1}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 2)}
 				ampm={setAMPM(hour + 2)}
-				icon={props.icon_2} // Replace with {props.weather_icon_2}
+				icon={props.icon_2}
 				temp={props.temp_2}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 3)}
 				ampm={setAMPM(hour + 3)}
-				icon={props.icon_3} // Replace with {props.weather_icon_3}
+				icon={props.icon_3}
 				temp={props.temp_3}
 			/>
 			<WeatherTabIcon
 				time={setTime(hour + 4)}
 				ampm={setAMPM(hour + 4)}
-				icon={props.icon_4} // Replace with {props.weather_icon_4}
+				icon={props.icon_4}
 				temp={props.temp_4}
 			/>
 		</div>
