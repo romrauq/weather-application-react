@@ -17,7 +17,7 @@ class App extends Component {
 		date: new Date().toDateString(),
 		img_alt: "{Location Image Name}",
 		location_icon: 0,
-		location_condition: "Condition Unknown",
+		location_condition: "???",
 		tab_icon_0: 0,
 		tab_icon_1: 0,
 		tab_icon_2: 0,
@@ -98,14 +98,14 @@ class App extends Component {
 					location_icon: res.data[0].WeatherIcon,
 					location_condition: res.data[0].IconPhrase,
 					tab_icon_0: res.data[0].WeatherIcon,
-					tab_temp_0: res.data[1].WeatherIcon,
-					tab_icon_1: res.data[2].WeatherIcon,
-					tab_temp_1: res.data[3].WeatherIcon,
-					tab_icon_2: res.data[4].WeatherIcon,
-					tab_temp_2: res.data[0].Temperature.Value,
-					tab_icon_3: res.data[1].Temperature.Value,
-					tab_temp_3: res.data[2].Temperature.Value,
-					tab_icon_4: res.data[3].Temperature.Value,
+					tab_icon_1: res.data[1].WeatherIcon,
+					tab_icon_2: res.data[2].WeatherIcon,
+					tab_icon_3: res.data[3].WeatherIcon,
+					tab_icon_4: res.data[4].WeatherIcon,
+					tab_temp_0: res.data[0].Temperature.Value,
+					tab_temp_1: res.data[1].Temperature.Value,
+					tab_temp_2: res.data[2].Temperature.Value,
+					tab_temp_3: res.data[3].Temperature.Value,
 					tab_temp_4: res.data[4].Temperature.Value,
 					precipitation: res.data[0].PrecipitationProbability,
 					humidity: res.data[0].RelativeHumidity,
@@ -260,14 +260,14 @@ class App extends Component {
 				/>
 				<WeatherTabs
 					icon_0={this.setIcon(this.state.tab_icon_0)}
-					temp_0={this.state.tab_temp_0}
 					icon_1={this.setIcon(this.state.tab_icon_1)}
-					temp_1={this.state.tab_temp_1}
 					icon_2={this.setIcon(this.state.tab_icon_2)}
-					temp_2={this.state.tab_temp_2}
 					icon_3={this.setIcon(this.state.tab_icon_3)}
-					temp_3={this.state.tab_temp_3}
 					icon_4={this.setIcon(this.state.tab_icon_4)}
+					temp_0={this.state.tab_temp_0}
+					temp_1={this.state.tab_temp_1}
+					temp_2={this.state.tab_temp_2}
+					temp_3={this.state.tab_temp_3}
 					temp_4={this.state.tab_temp_4}
 				/>
 
