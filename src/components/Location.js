@@ -23,7 +23,7 @@ const Location = (props) => {
 			</div>
 
 			<div className="location-component-child-2">
-				<a href="location.html">
+				<a href="#">
 					<img
 						src={location_image}
 						alt={props.alt}
