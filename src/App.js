@@ -28,9 +28,21 @@ class App extends Component {
 		tab_temp_2: 0,
 		tab_temp_3: 0,
 		tab_temp_4: 0,
-		precipitation: 0,
-		humidity: 0,
-		windspeed: 0,
+		precipitation_0: 0,
+		precipitation_1: 0,
+		precipitation_2: 0,
+		precipitation_3: 0,
+		precipitation_4: 0,
+		humidity_0: 0,
+		humidity_1: 0,
+		humidity_2: 0,
+		humidity_3: 0,
+		humidity_4: 0,
+		windspeed_0: 0,
+		windspeed_1: 0,
+		windspeed_2: 0,
+		windspeed_3: 0,
+		windspeed_4: 0,
 		icon: {
 			sunny: "fas fa-sun tab-icons",
 			mostly_sunny: "fas fa-sun tab-icons",
@@ -108,9 +120,21 @@ class App extends Component {
 						tab_temp_2: res.data[2].Temperature.Value,
 						tab_temp_3: res.data[3].Temperature.Value,
 						tab_temp_4: res.data[4].Temperature.Value,
-						precipitation: res.data[0].PrecipitationProbability,
-						humidity: res.data[0].RelativeHumidity,
-						windspeed: res.data[0].Wind.Speed.Value,
+						precipitation_0: res.data[0].PrecipitationProbability,
+						precipitation_1: res.data[1].PrecipitationProbability,
+						precipitation_2: res.data[2].PrecipitationProbability,
+						precipitation_3: res.data[3].PrecipitationProbability,
+						precipitation_4: res.data[4].PrecipitationProbability,
+						humidity_0: res.data[0].RelativeHumidity,
+						humidity_1: res.data[1].RelativeHumidity,
+						humidity_2: res.data[2].RelativeHumidity,
+						humidity_3: res.data[3].RelativeHumidity,
+						humidity_4: res.data[4].RelativeHumidity,
+						windspeed_0: res.data[0].Wind.Speed.Value,
+						windspeed_1: res.data[1].Wind.Speed.Value,
+						windspeed_2: res.data[2].Wind.Speed.Value,
+						windspeed_3: res.data[3].Wind.Speed.Value,
+						windspeed_4: res.data[4].Wind.Speed.Value,
 					});
 				})
 				.catch((err) => console.log(err));
@@ -274,12 +298,34 @@ class App extends Component {
 				/>
 
 				<AdditionalInfo
-					precipitation={this.state.precipitation}
-					humidity={this.state.humidity}
-					windspeed={this.state.windspeed}
+					precipitation={this.state.precipitation_0}
+					humidity={this.state.humidity_0}
+					windspeed={this.state.windspeed_0}
 				/>
 				<Temperature />
-				<Graph />
+				<Graph
+					precipitation={[
+						this.state.precipitation_0,
+						this.state.precipitation_1,
+						this.state.precipitation_2,
+						this.state.precipitation_3,
+						this.state.precipitation_4,
+					]}
+					humidity={[
+						this.state.humidity_0,
+						this.state.humidity_1,
+						this.state.humidity_2,
+						this.state.humidity_3,
+						this.state.humidity_4,
+					]}
+					windspeed={[
+						this.state.windspeed_0,
+						this.state.windspeed_1,
+						this.state.windspeed_2,
+						this.state.windspeed_3,
+						this.state.windspeed_4,
+					]}
+				/>
 			</div>
 		);
 	}
