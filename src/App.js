@@ -93,25 +93,27 @@ class App extends Component {
 			});
 			Axios.get(
 				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=true`
-			).then((res) => {
-				this.setState({
-					location_icon: res.data[0].WeatherIcon,
-					location_condition: res.data[0].IconPhrase,
-					tab_icon_0: res.data[0].WeatherIcon,
-					tab_icon_1: res.data[1].WeatherIcon,
-					tab_icon_2: res.data[2].WeatherIcon,
-					tab_icon_3: res.data[3].WeatherIcon,
-					tab_icon_4: res.data[4].WeatherIcon,
-					tab_temp_0: res.data[0].Temperature.Value,
-					tab_temp_1: res.data[1].Temperature.Value,
-					tab_temp_2: res.data[2].Temperature.Value,
-					tab_temp_3: res.data[3].Temperature.Value,
-					tab_temp_4: res.data[4].Temperature.Value,
-					precipitation: res.data[0].PrecipitationProbability,
-					humidity: res.data[0].RelativeHumidity,
-					windspeed: res.data[0].Wind.Speed.Value,
-				});
-			});
+			)
+				.then((res) => {
+					this.setState({
+						location_icon: res.data[0].WeatherIcon,
+						location_condition: res.data[0].IconPhrase,
+						tab_icon_0: res.data[0].WeatherIcon,
+						tab_icon_1: res.data[1].WeatherIcon,
+						tab_icon_2: res.data[2].WeatherIcon,
+						tab_icon_3: res.data[3].WeatherIcon,
+						tab_icon_4: res.data[4].WeatherIcon,
+						tab_temp_0: res.data[0].Temperature.Value,
+						tab_temp_1: res.data[1].Temperature.Value,
+						tab_temp_2: res.data[2].Temperature.Value,
+						tab_temp_3: res.data[3].Temperature.Value,
+						tab_temp_4: res.data[4].Temperature.Value,
+						precipitation: res.data[0].PrecipitationProbability,
+						humidity: res.data[0].RelativeHumidity,
+						windspeed: res.data[0].Wind.Speed.Value,
+					});
+				})
+				.catch((err) => console.log(err));
 		});
 	};
 
