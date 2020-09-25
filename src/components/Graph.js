@@ -26,7 +26,7 @@ function setAMPM(val) {
 	}
 }
 
-const Graph = () => {
+const Graph = (props) => {
 	useEffect(() => {
 		const ctx = document.getElementById("myChart").getContext("2d");
 		new Chart(ctx, {
@@ -47,19 +47,37 @@ const Graph = () => {
 						label: "Precipitation",
 						backgroundColor: "skyblue",
 						borderColor: "rgb(50, 205, 150)",
-						data: [5, 10, 3, 0, 14],
+						data: [
+							props.precipitation[0],
+							props.precipitation[1],
+							props.precipitation[2],
+							props.precipitation[3],
+							props.precipitation[4],
+						],
 					},
 					{
 						label: "Humidity",
 						backgroundColor: "rgb(50, 190, 150)",
 						borderColor: "rgb(150, 250, 50)",
-						data: [24, 23, 25, 24, 21],
+						data: [
+							props.humidity[0],
+							props.humidity[1],
+							props.humidity[2],
+							props.humidity[3],
+							props.humidity[4],
+						],
 					},
 					{
 						label: "Wind Speed",
 						backgroundColor: "#777",
 						borderColor: "rgb(250, 0, 0)",
-						data: [24, 23, 25, 24, 21],
+						data: [
+							props.windspeed[0],
+							props.windspeed[1],
+							props.windspeed[2],
+							props.windspeed[3],
+							props.windspeed[4],
+						],
 					},
 				],
 			},
