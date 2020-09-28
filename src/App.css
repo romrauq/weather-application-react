@@ -75,7 +75,7 @@ input[type="text"] {
 	width: fit-content;
 }
 .location-component i {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	color: skyblue;
 }
 .location-condition {
@@ -122,7 +122,7 @@ input[type="text"] {
 	margin: 0;
 }
 .tab-icons {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	margin: 5px 0;
 }
 /* --------------------------- AdditionalInfo component styles:*/
