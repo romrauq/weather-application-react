@@ -5,7 +5,7 @@ const SearchBar = (props) => {
 		<div className="searchbar-component">
 			<input
 				type="text"
-				autoFocus="true"
+				autoFocus={true}
 				placeholder="Enter Your City Name"
 				onChange={props.handleChange}
 			/>
