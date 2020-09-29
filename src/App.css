@@ -61,7 +61,7 @@ input[type="text"] {
 }
 .location-heading {
 	color: white;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	margin: 0;
 }
@@ -160,8 +160,8 @@ input[type="text"] {
 	border-left: 1px solid #555;
 	border-right: 1px solid #555;
 }
-/* --------------------------- Temperature component styles:*/
-.temperature-component {
+/* --------------------------- ChartsSelect component styles:*/
+.charts-select-component {
 	display: flex;
 	justify-content: space-between;
 	width: 98%;
@@ -172,7 +172,7 @@ input[type="text"] {
 	border-radius: 5px;
 	cursor: default;
 }
-.temperature-heading {
+.charts-select-heading {
 	font-size: 1.1rem;
 	font-weight: bold;
 	margin: 0;
