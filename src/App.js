@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import LocationInfo from "./components/Location";
 import WeatherTabs from "./components/WeatherTabs";
 import AdditionalInfo from "./components/AdditionalInfo";
-import Temperature from "./components/Temperature";
+import ChartSelect from "./components/ChartSelect";
 import Graph from "./components/Graph";
 import Axios from "axios";
 
@@ -296,13 +296,12 @@ class App extends Component {
 					temp_3={this.state.tab_temp_3}
 					temp_4={this.state.tab_temp_4}
 				/>
-
 				<AdditionalInfo
 					precipitation={this.state.precipitation_0}
 					humidity={this.state.humidity_0}
 					windspeed={this.state.windspeed_0}
 				/>
-				<Temperature />
+				<ChartSelect />
 				<Graph
 					precipitation={[
 						this.state.precipitation_0,
