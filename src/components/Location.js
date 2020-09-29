@@ -6,13 +6,11 @@ const Location = (props) => {
 	return (
 		<div className="location-component">
 			<div className="location-component-child-1">
-				<a href="location.html">
-					<h1 className="location-heading">
-						{props.country}
-						<br />
-						{props.city}
-					</h1>
-				</a>
+				<h1 className="location-heading">
+					{props.country}
+					<br />
+					{props.city}
+				</h1>
 
 				<p className="location-date">{props.date}</p>
 
