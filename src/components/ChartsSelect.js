@@ -1,10 +1,10 @@
 import React from "react";
 
-const Temperature = () => {
+const Charts = () => {
 	return (
-		<div className="temperature-component">
+		<div className="charts-select-component">
 			<div>
-				<p className="temperature-heading">Temperature</p>
+				<p className="charts-select-heading">Charts</p>
 			</div>
 			<div>
 				<select className="dropdown-options">
@@ -17,4 +17,4 @@ const Temperature = () => {
 	);
 };
 
-export default Temperature;
+export default Charts;
