@@ -91,7 +91,7 @@ class App extends Component {
 
 	// Statements to run as text is typed in search input field:
 	handleChange = (e) => {
-		// Assign typed text value to state property: this.state.search_query.
+		// Assign typed text value to state property: "search_query".
 		this.setState({ search_query: e.target.value });
 	};
 
@@ -272,6 +272,17 @@ class App extends Component {
 		}
 	};
 
+	// Function to render different charts when the dropdown selection is changed:
+	selectChart = (e) => {
+		if (e.target.value === "bar") {
+			console.log("bar");
+		} else if (e.target.value === "line") {
+			console.log("line");
+		} else if (e.target.value === "pie") {
+			console.log("pie");
+		}
+	};
+
 	render() {
 		return (
 			<div className="App">
@@ -304,7 +315,9 @@ class App extends Component {
 					humidity={this.state.humidity_0}
 					windspeed={this.state.windspeed_0}
 				/>
-				<ChartSelect />
+
+				<ChartSelect onChange={this.selectChart} />
+
 				<Graph
 					precipitation={[
 						this.state.precipitation_0,
