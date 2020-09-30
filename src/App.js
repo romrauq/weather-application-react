@@ -8,6 +8,8 @@ import ChartSelect from "./components/ChartSelect";
 import Graph from "./components/Graph";
 import Axios from "axios";
 
+let my_api_key = process.env.REACT_APP_ACCUWEATHER_API_KEY;
+
 class App extends Component {
 	state = {
 		search_query: "",
@@ -87,15 +89,16 @@ class App extends Component {
 		},
 	};
 
-	// Function to assign typed text value to this.state.search_query:
+	// Statements to run as text is typed in search input field:
 	handleChange = (e) => {
+		// Assign typed text value to state property: this.state.search_query.
 		this.setState({ search_query: e.target.value });
 	};
 
 	// Function(s) to be executed when search button is clicked:
 	searchAction = () => {
 		Axios.get(
-			`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&q=${this.state.search_query}`
+			`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${my_api_key}&q=${this.state.search_query}`
 		).then((res) => {
 			// Setting location_key, country & city values to the state:
 			this.setState({
@@ -104,7 +107,7 @@ class App extends Component {
 				city: res.data[0].LocalizedName,
 			});
 			Axios.get(
-				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09lulVbGjWKvDKKR7fVOza26BTcRrc8NIW&language=en-us&details=true&metric=true`
+				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${my_api_key}&language=en-us&details=true&metric=true`
 			)
 				.then((res) => {
 					this.setState({
@@ -141,130 +144,130 @@ class App extends Component {
 		});
 	};
 
-	// Function to return respective fontawesome classes to set Location component icon:
-	setIcon = (num) => {
-		if (num === 1) {
+	// Function to return respective icon classes to set Location component icon:
+	setIcon = (icon_num) => {
+		if (icon_num === 1) {
 			// ----------------------------------------- Sunny
 			return this.state.icon.sunny;
-		} else if (num === 2) {
+		} else if (icon_num === 2) {
 			// ----------------------------------------- Mostly Sunny
 			return this.state.icon.mostly_sunny;
-		} else if (num === 3) {
+		} else if (icon_num === 3) {
 			// ----------------------------------------- Partly Sunny
 			return this.state.icon.partly_sunny;
-		} else if (num === 4) {
+		} else if (icon_num === 4) {
 			// ----------------------------------------- Intermittent Clouds
 			return this.state.icon.intermittent_clouds_day;
-		} else if (num === 5) {
+		} else if (icon_num === 5) {
 			// ----------------------------------------- Hazy Sunshine
 			return this.state.icon.hazy_sunshine;
-		} else if (num === 6) {
+		} else if (icon_num === 6) {
 			// ----------------------------------------- Mostly Cloudy
 			return this.state.icon.mostly_cloudy_day;
-		} else if (num === 7) {
+		} else if (icon_num === 7) {
 			// ----------------------------------------- Cloudy
 			return this.state.icon.cloudy;
-		} else if (num === 8) {
+		} else if (icon_num === 8) {
 			// ----------------------------------------- Dreary (Overcast)
 			return this.state.icon.dreary_overcast;
-		} else if (num === 11) {
+		} else if (icon_num === 11) {
 			// ----------------------------------------- Fog
 			return this.state.icon.fog;
-		} else if (num === 12) {
+		} else if (icon_num === 12) {
 			// ----------------------------------------- Showers
 			return this.state.icon.showers;
-		} else if (num === 13) {
+		} else if (icon_num === 13) {
 			// ----------------------------------------- Mostly Cloudy w/ Showers
 			return this.state.icon.mostly_cloudy_w_showers;
-		} else if (num === 14) {
+		} else if (icon_num === 14) {
 			// ----------------------------------------- Partly Sunny w/ Showers
 			return this.state.icon.partly_sunny_w_showers;
-		} else if (num === 15) {
+		} else if (icon_num === 15) {
 			// ----------------------------------------- Thunder-Storms
 			return this.state.icon.t_storms;
-		} else if (num === 16) {
+		} else if (icon_num === 16) {
 			// ----------------------------------------- Mostly Cloudy w/ T-Storms
 			return this.state.icon.mostly_cloudy_w_t_storms;
-		} else if (num === 17) {
+		} else if (icon_num === 17) {
 			// ----------------------------------------- Partly Sunny w/ T-Storms
 			return this.state.icon.partly_cloudy_w_t_storms;
-		} else if (num === 18) {
+		} else if (icon_num === 18) {
 			// ----------------------------------------- Rain
 			return this.state.icon.rain;
-		} else if (num === 19) {
+		} else if (icon_num === 19) {
 			// ----------------------------------------- Flurries
 			return this.state.icon.flurries;
-		} else if (num === 20) {
+		} else if (icon_num === 20) {
 			// ----------------------------------------- Mostly Cloudy w/ Flurries
 			return this.state.icon.mostly_cloudy_w_flurries_day;
-		} else if (num === 21) {
+		} else if (icon_num === 21) {
 			// ----------------------------------------- Partly Sunny w/ Flurries
 			return this.state.icon.partly_sunny_w_flurries;
-		} else if (num === 22) {
+		} else if (icon_num === 22) {
 			// ----------------------------------------- Snow
 			return this.state.icon.snow;
-		} else if (num === 23) {
+		} else if (icon_num === 23) {
 			// ----------------------------------------- Mostly Cloudy w/ Snow
 			return this.state.icon.mostly_cloudy_w_snow_day;
-		} else if (num === 24) {
+		} else if (icon_num === 24) {
 			// ----------------------------------------- Ice
 			return this.state.icon.ice;
-		} else if (num === 25) {
+		} else if (icon_num === 25) {
 			// ----------------------------------------- Sleet
 			return this.state.icon.sleet;
-		} else if (num === 26) {
+		} else if (icon_num === 26) {
 			// ----------------------------------------- Freezing Rain
 			return this.state.icon.freezing_rain;
-		} else if (num === 29) {
+		} else if (icon_num === 29) {
 			// ----------------------------------------- Rain and Snow
 			return this.state.icon.rain_and_snow;
-		} else if (num === 30) {
+		} else if (icon_num === 30) {
 			// ----------------------------------------- Hot
 			return this.state.icon.hot;
-		} else if (num === 31) {
+		} else if (icon_num === 31) {
 			// ----------------------------------------- Cold
 			return this.state.icon.cold;
-		} else if (num === 32) {
+		} else if (icon_num === 32) {
 			// ----------------------------------------- Windy
 			return this.state.icon.windy;
-		} else if (num === 33) {
+		} else if (icon_num === 33) {
 			// ----------------------------------------- Clear
 			return this.state.icon.clear;
-		} else if (num === 34) {
+		} else if (icon_num === 34) {
 			// ----------------------------------------- Mostly Clear
 			return this.state.icon.mostly_clear;
-		} else if (num === 35) {
+		} else if (icon_num === 35) {
 			// ----------------------------------------- Partly Cloudy
 			return this.state.icon.partly_cloudy;
-		} else if (num === 36) {
+		} else if (icon_num === 36) {
 			// ----------------------------------------- Intermittent Clouds
 			return this.state.icon.intermittent_clouds_night;
-		} else if (num === 37) {
+		} else if (icon_num === 37) {
 			// ----------------------------------------- Hazy Moonlight
 			return this.state.icon.hazy_moonlight;
-		} else if (num === 38) {
+		} else if (icon_num === 38) {
 			// ----------------------------------------- Mostly Cloudy
 			return this.state.icon.mostly_cloudy_night;
-		} else if (num === 39) {
+		} else if (icon_num === 39) {
 			// ----------------------------------------- Partly Cloudy w/ Showers
 			return this.state.icon.partly_cloudy_w_showers;
-		} else if (num === 40) {
+		} else if (icon_num === 40) {
 			// ----------------------------------------- Mostly Cloudy w/ Showers
 			return this.state.icon.mostly_cloudy_showers;
-		} else if (num === 41) {
+		} else if (icon_num === 41) {
 			// ----------------------------------------- Partly Cloudy w/ T-Storms
 			return this.state.icon.partly_cloudy_w_t_storms;
-		} else if (num === 42) {
+		} else if (icon_num === 42) {
 			// ----------------------------------------- Mostly Cloudy w/ T-Storms
 			return this.state.icon.mostly_cloudy_w_t_storms;
-		} else if (num === 43) {
+		} else if (icon_num === 43) {
 			// ----------------------------------------- Mostly Cloudy w/ Flurries
 			return this.state.icon.mostly_cloudy_w_flurries_night;
-		} else if (num === 44) {
-			//	Mostly Cloudy w/ Snow (night)
+		} else if (icon_num === 44) {
+			// ----------------------------------------- Mostly Cloudy w/ Snow (night)
 			return this.state.icon.mostly_cloudy_w_snow_night;
 		} else {
-			// ----------------------------------------- Unknown cCondition
+			// ----------------------------------------- Unknown Condition
 			return this.state.icon.error_icon;
 		}
 	};
