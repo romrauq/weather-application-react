@@ -1,16 +1,16 @@
 import React from "react";
 
-const Charts = () => {
+const Charts = (props) => {
 	return (
 		<div className="charts-select-component">
 			<div>
-				<p className="charts-select-heading">Charts</p>
+				<p className="charts-select-heading">Select a Chart</p>
 			</div>
 			<div>
-				<select className="dropdown-options">
-					<option value="yesterday">Yesterday</option>
-					<option value="last_week">Last Week</option>
-					<option value="last_month">Last Month</option>
+				<select className="dropdown-options" onChange={props.onChange}>
+					<option value="bar">Bar Chart</option>
+					<option value="line">Line Chart</option>
+					<option value="pie">Pie Chart</option>
 				</select>
 			</div>
 		</div>
