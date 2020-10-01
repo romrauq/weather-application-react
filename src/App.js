@@ -7,6 +7,7 @@ import AdditionalInfo from "./components/AdditionalInfo";
 import ChartSelect from "./components/ChartSelect";
 import Graph from "./components/Graph";
 import Axios from "axios";
+require("dotenv").config();
 
 class App extends Component {
 	state = {
