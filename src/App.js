@@ -97,7 +97,7 @@ class App extends Component {
 	// Function(s) to be executed when search button is clicked:
 	searchAction = () => {
 		Axios.get(
-			`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${process.env.REACT_APP_ACCUWEATHER_API_KEY}&q=${this.state.search_query}`
+			`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${process.env.REACT_APP_API_KEY}&q=${this.state.search_query}`
 		).then((res) => {
 			// Setting location_key, country & city values to the state:
 			this.setState({
@@ -106,7 +106,7 @@ class App extends Component {
 				city: res.data[0].LocalizedName,
 			});
 			Axios.get(
-				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${process.env.REACT_APP_ACCUWEATHER_API_KEY}&language=en-us&details=true&metric=true`
+				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${process.env.REACT_APP_API_KEY}&language=en-us&details=true&metric=true`
 			)
 				.then((res) => {
 					this.setState({
