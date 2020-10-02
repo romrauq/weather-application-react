@@ -86,6 +86,7 @@ class App extends Component {
 			mostly_cloudy_w_snow_night: "icofont-snowy-night tab-icons",
 			error_icon: "icofont-question-circle tab-icons",
 		},
+		selected_chart: "bar-chart",
 	};
 
 	// Statements to run as text is typed in search input field:
@@ -274,12 +275,15 @@ class App extends Component {
 
 	// Function to render respective charts when the selection dropdown is changed:
 	selectChart = (e) => {
-		if (e.target.value === "bar") {
-			console.log("bar");
+		if (e.target.value === "bar-chart") {
+			// console.log("bar");
+			this.setState({ selected_chart: "bar" });
 		} else if (e.target.value === "line") {
-			console.log("line");
+			// console.log("line");
+			this.setState({ selected_chart: "line-chart" });
 		} else if (e.target.value === "pie") {
-			console.log("pie");
+			// console.log("pie");
+			this.setState({ selected_chart: "pie-chart" });
 		}
 	};
 
@@ -319,6 +323,7 @@ class App extends Component {
 				<ChartSelect onChange={this.selectChart} />
 
 				<Graph
+					chart={this.state.selected_chart}
 					precipitation={[
 						this.state.precipitation_0,
 						this.state.precipitation_1,
