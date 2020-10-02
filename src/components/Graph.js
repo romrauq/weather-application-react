@@ -1,28 +1,42 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import BarChart from "./Charts/BarChart";
 import LineChart from "./Charts/LineChart";
 import PieChart from "./Charts/PieChart";
 
 const Graph = (props) => {
-	return (
-		<div className="graph-component">
-			<BarChart
-				precipitation={props.precipitation}
-				humidity={props.humidity}
-				windspeed={props.windspeed}
-			/>
-			{/* <LineChart
-				precipitation={props.precipitation}
-				humidity={props.humidity}
-				windspeed={props.windspeed}
-			/> */}
-			{/* <PieChart
-				precipitation={props.precipitation}
-				humidity={props.humidity}
-				windspeed={props.windspeed}
-			/> */}
-		</div>
-	);
+	if (props.chart === "bar-chart") {
+		return (
+			<div className="graph-component">
+				<BarChart
+					precipitation={props.precipitation}
+					humidity={props.humidity}
+					windspeed={props.windspeed}
+				/>
+			</div>
+		);
+	} else if (props.chart === "line-chart") {
+		return (
+			<div className="graph-component">
+				<LineChart
+					precipitation={props.precipitation}
+					humidity={props.humidity}
+					windspeed={props.windspeed}
+				/>
+			</div>
+		);
+	} else if (props.chart === "pie-chart") {
+		{
+			return (
+				<div className="graph-component">
+					<PieChart
+						precipitation={props.precipitation}
+						humidity={props.humidity}
+						windspeed={props.windspeed}
+					/>
+				</div>
+			);
+		}
+	}
 };
+
 export default Graph;
