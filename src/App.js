@@ -109,6 +109,7 @@ class App extends Component {
 				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${process.env.REACT_APP_API_KEY}&language=en-us&details=true&metric=true`
 			)
 				.then((res) => {
+					// Set values from response data into respective state properties:
 					this.setState({
 						location_icon: res.data[0].WeatherIcon,
 						location_condition: res.data[0].IconPhrase,
@@ -271,7 +272,7 @@ class App extends Component {
 		}
 	};
 
-	// Function to render different charts when the dropdown selection is changed:
+	// Function to render respective charts when the selection dropdown is changed:
 	selectChart = (e) => {
 		if (e.target.value === "bar") {
 			console.log("bar");
