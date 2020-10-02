@@ -192,16 +192,12 @@ input[type="text"] {
 .graph-component {
 	width: 98%;
 	height: 35vh;
-	margin: 0px auto 5px;
+	margin: 0px auto;
 	border: solid 1px #808080;
 	border-radius: 5px;
 }
-.graph-content {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
+.selected-graph {
+	height: 100%;
 }
 /*-------------------------------------Media Queries:*/
 /* Laptop screen size styles: */
