@@ -275,9 +275,9 @@ class App extends Component {
 
 	// Function to render respective charts when the selection dropdown is changed:
 	selectChart = (e) => {
-		if (e.target.value === "bar-chart") {
+		if (e.target.value === "bar") {
 			// console.log("bar");
-			this.setState({ selected_chart: "bar" });
+			this.setState({ selected_chart: "bar-chart" });
 		} else if (e.target.value === "line") {
 			// console.log("line");
 			this.setState({ selected_chart: "line-chart" });
