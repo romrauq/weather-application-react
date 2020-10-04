@@ -4,7 +4,7 @@ const WeatherTabIcon = (props) => {
 	return (
 		<div className="weather-tab">
 			<p>
-				{props.time}
+				{props.hour}
 				{props.ampm}
 			</p>
 			<i className={props.icon}></i>
