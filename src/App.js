@@ -5,7 +5,7 @@ import LocationInfo from "./components/Location";
 import WeatherTabs from "./components/WeatherTabs";
 import AdditionalInfo from "./components/AdditionalInfo";
 import ChartSelect from "./components/ChartSelect";
-import Graph from "./components/Graph";
+import Chart from "./components/Chart";
 import Axios from "axios";
 require("dotenv").config();
 
@@ -16,6 +16,7 @@ class App extends Component {
 		country: "Country Name",
 		city: "City Name",
 		date: new Date().toDateString(),
+		hour: new Date().getHours(),
 		img_alt: "img alt text",
 		location_icon: 0,
 		location_condition: "Location condition",
@@ -97,20 +98,22 @@ class App extends Component {
 
 	// Function(s) to be executed when search button is clicked:
 	searchAction = () => {
+		// Request to get location_key, country & city values from Accuweather API:
 		Axios.get(
 			`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${process.env.REACT_APP_API_KEY}&q=${this.state.search_query}`
 		).then((res) => {
-			// Setting location_key, country & city values to the state:
+			// Setting the location key, country & city values received from request response data into the state:
 			this.setState({
 				location_key: res.data[0].Key,
 				country: res.data[0].Country.LocalizedName,
 				city: res.data[0].LocalizedName,
 			});
+			// Request to get 12 hour weather details data from Accuweather API:
 			Axios.get(
 				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${process.env.REACT_APP_API_KEY}&language=en-us&details=true&metric=true`
 			)
 				.then((res) => {
-					// Set values from response data into respective state properties:
+					// Set state values using response data:
 					this.setState({
 						location_icon: res.data[0].WeatherIcon,
 						location_condition: res.data[0].IconPhrase,
@@ -143,6 +146,28 @@ class App extends Component {
 				})
 				.catch((err) => console.log(err));
 		});
+	};
+
+	// Function to set time to 12 hour format:
+	setTime = (val) => {
+		if (val === 24) {
+			return 12;
+		} else if (val > 12) {
+			return val % 12;
+		} else {
+			return val;
+		}
+	};
+
+	//Condition to suffix "AM" or "PM" to hour value:
+	setAMPM = (val) => {
+		if (val >= 24) {
+			return "am";
+		} else if (val >= 12) {
+			return "pm";
+		} else {
+			return "am";
+		}
 	};
 
 	// Function to return respective icon classes to set Location component icon:
@@ -303,6 +328,9 @@ class App extends Component {
 					location_condition={this.state.location_condition}
 				/>
 				<WeatherTabs
+					hour={this.state.hour}
+					setTime={this.setTime}
+					setAMPM={this.setAMPM}
 					icon_0={this.setIcon(this.state.tab_icon_0)}
 					icon_1={this.setIcon(this.state.tab_icon_1)}
 					icon_2={this.setIcon(this.state.tab_icon_2)}
@@ -322,8 +350,11 @@ class App extends Component {
 
 				<ChartSelect onChange={this.selectChart} />
 
-				<Graph
+				<Chart
 					chart={this.state.displayed_chart}
+					hour={this.state.hour}
+					setTime={this.setTime}
+					setAMPM={this.setAMPM}
 					precipitation={[
 						this.state.precipitation_0,
 						this.state.precipitation_1,
