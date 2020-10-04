@@ -302,13 +302,13 @@ class App extends Component {
 	selectChart = (e) => {
 		if (e.target.value === "bar") {
 			// console.log("bar");
-			this.setState({ selected_chart: "bar-chart" });
+			this.setState({ displayed_chart: "bar-chart" });
 		} else if (e.target.value === "line") {
 			// console.log("line");
-			this.setState({ selected_chart: "line-chart" });
+			this.setState({ displayed_chart: "line-chart" });
 		} else if (e.target.value === "pie") {
 			// console.log("pie");
-			this.setState({ selected_chart: "pie-chart" });
+			this.setState({ displayed_chart: "pie-chart" });
 		}
 	};
 
@@ -348,7 +348,7 @@ class App extends Component {
 					windspeed={this.state.windspeed_0}
 				/>
 
-				<ChartSelect onChange={this.selectChart} />
+				<ChartSelect selectChart={this.selectChart} />
 
 				<Chart
 					chart={this.state.displayed_chart}
