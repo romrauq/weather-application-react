@@ -18,7 +18,7 @@ class App extends Component {
 		date: new Date().toDateString(),
 		img_alt: "img alt text",
 		location_icon: 0,
-		location_condition: "???",
+		location_condition: "Location condition",
 		tab_icon_0: 0,
 		tab_icon_1: 0,
 		tab_icon_2: 0,
@@ -86,7 +86,7 @@ class App extends Component {
 			mostly_cloudy_w_snow_night: "icofont-snowy-night tab-icons",
 			error_icon: "icofont-question-circle tab-icons",
 		},
-		selected_chart: "bar-chart",
+		displayed_chart: "bar-chart",
 	};
 
 	// Statements to run as text is typed in search input field:
@@ -323,7 +323,7 @@ class App extends Component {
 				<ChartSelect onChange={this.selectChart} />
 
 				<Graph
-					chart={this.state.selected_chart}
+					chart={this.state.displayed_chart}
 					precipitation={[
 						this.state.precipitation_0,
 						this.state.precipitation_1,
