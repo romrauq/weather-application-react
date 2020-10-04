@@ -4,7 +4,7 @@ const Charts = (props) => {
 	return (
 		<div className="charts-select-component">
 			<div>
-				<p className="charts-select-heading">Select a Chart</p>
+				<p className="charts-select-heading">Select Chart</p>
 			</div>
 			<div>
 				<select className="dropdown-options" onChange={props.selectChart}>
