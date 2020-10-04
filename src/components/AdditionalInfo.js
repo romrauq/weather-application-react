@@ -3,7 +3,7 @@ import React from "react";
 const AdditionalInfo = (props) => {
 	return (
 		<div className="additional-info-component">
-			{/* <h3 className="additional-info-heading">Additional Information:</h3> */}
+			{/* <h3 className="additional-info-heading">Additional Information</h3> */}
 			<div className="additional-info-sections">
 				<div className="additional-info-section">
 					<p className="additional-info-title">Precipitation</p>
