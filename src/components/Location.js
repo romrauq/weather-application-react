@@ -1,5 +1,6 @@
 import React from "react";
 
+// Replace statement below with an api request that would get respective city images:
 const location_image = "./resources/images/location-image.jpg";
 
 const Location = (props) => {
