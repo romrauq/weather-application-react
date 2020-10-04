@@ -25,17 +25,15 @@ const Graph = (props) => {
 			</div>
 		);
 	} else if (props.chart === "pie-chart") {
-		{
-			return (
-				<div className="graph-component">
-					<PieChart
-						precipitation={props.precipitation}
-						humidity={props.humidity}
-						windspeed={props.windspeed}
-					/>
-				</div>
-			);
-		}
+		return (
+			<div className="graph-component">
+				<PieChart
+					precipitation={props.precipitation}
+					humidity={props.humidity}
+					windspeed={props.windspeed}
+				/>
+			</div>
+		);
 	}
 };
 
