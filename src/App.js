@@ -13,10 +13,10 @@ class App extends Component {
 	state = {
 		search_query: "",
 		location_key: {},
-		country: "[Country]",
-		city: "[City]",
+		country: "Country Name",
+		city: "City Name",
 		date: new Date().toDateString(),
-		img_alt: "{Location Image Name}",
+		img_alt: "img alt text",
 		location_icon: 0,
 		location_condition: "???",
 		tab_icon_0: 0,
