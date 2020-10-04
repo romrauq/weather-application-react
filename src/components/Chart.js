@@ -4,6 +4,7 @@ import LineChart from "./Charts/LineChart";
 import PieChart from "./Charts/PieChart";
 
 const Chart = (props) => {
+	// Conditional statement to render different charts:
 	if (props.chart === "bar-chart") {
 		return (
 			<div className="graph-component">
