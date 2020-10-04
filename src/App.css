@@ -113,7 +113,6 @@ input[type="text"] {
 	text-align: center;
 	width: 20%;
 	height: fit-content;
-	padding: 5px;
 	border-radius: 0 0 20% 20%;
 	cursor: pointer;
 }
