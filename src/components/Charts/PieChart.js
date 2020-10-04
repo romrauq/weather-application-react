@@ -1,31 +1,6 @@
 import React, { useEffect } from "react";
 import Chart from "chart.js";
 
-// Creating a variable which contains the current hour value:
-let hour = new Date().getHours();
-
-// Function to set time to 12 hour format:
-function setTime(val) {
-	if (val === 24) {
-		return 12;
-	} else if (val > 12) {
-		return val % 12;
-	} else {
-		return val;
-	}
-}
-
-//Condition to suffix "AM" or "PM" to hour value:
-function setAMPM(val) {
-	if (val >= 24) {
-		return "am";
-	} else if (val >= 12) {
-		return "pm";
-	} else {
-		return "am";
-	}
-}
-
 const PieChart = (props) => {
 	useEffect(() => {
 		const ctx = document.getElementById("myChart").getContext("2d");
@@ -36,11 +11,11 @@ const PieChart = (props) => {
 			// The data for our dataset:
 			data: {
 				labels: [
-					`${setTime(hour)} ${setAMPM(hour)}`,
-					`${setTime(hour + 1)} ${setAMPM(hour + 1)}`,
-					`${setTime(hour + 2)} ${setAMPM(hour + 2)}`,
-					`${setTime(hour + 3)} ${setAMPM(hour + 3)}`,
-					`${setTime(hour + 4)} ${setAMPM(hour + 4)}`,
+					`${props.setTime(props.hour)} ${props.setAMPM(props.hour)}`,
+					`${props.setTime(props.hour + 1)} ${props.setAMPM(props.hour + 1)}`,
+					`${props.setTime(props.hour + 2)} ${props.setAMPM(props.hour + 2)}`,
+					`${props.setTime(props.hour + 3)} ${props.setAMPM(props.hour + 3)}`,
+					`${props.setTime(props.hour + 4)} ${props.setAMPM(props.hour + 4)}`,
 				],
 				datasets: [
 					{
