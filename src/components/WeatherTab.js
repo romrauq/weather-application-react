@@ -1,8 +1,8 @@
 import React from "react";
 
-const WeatherTabIcon = (props) => {
+const WeatherTab = (props) => {
 	return (
-		<div className="weather-tab">
+		<div className="weather-tab-component">
 			<p>
 				{props.hour}
 				{props.ampm}
@@ -13,4 +13,4 @@ const WeatherTabIcon = (props) => {
 	);
 };
 
-export default WeatherTabIcon;
+export default WeatherTab;
