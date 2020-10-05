@@ -20,7 +20,7 @@ const LineChart = (props) => {
 				datasets: [
 					{
 						label: "Precipitation",
-						backgroundColor: "skyblue",
+						backgroundColor: "rgba(50, 205, 150, 0.5)",
 						borderColor: "rgb(50, 205, 150)",
 						data: [
 							props.precipitation[0],
@@ -32,7 +32,7 @@ const LineChart = (props) => {
 					},
 					{
 						label: "Humidity",
-						backgroundColor: "rgb(50, 190, 150)",
+						backgroundColor: "rgba(150, 250, 50, 0.5)",
 						borderColor: "rgb(150, 250, 50)",
 						data: [
 							props.humidity[0],
@@ -44,8 +44,8 @@ const LineChart = (props) => {
 					},
 					{
 						label: "Wind Speed",
-						backgroundColor: "#777",
-						borderColor: "rgb(250, 0, 0)",
+						backgroundColor: "rgba(250, 0, 0, 0.5)",
+						borderColor: "rgba(250, 0, 0, 0.5)",
 						data: [
 							props.windspeed[0],
 							props.windspeed[1],
