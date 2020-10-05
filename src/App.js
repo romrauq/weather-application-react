@@ -90,30 +90,31 @@ class App extends Component {
 		displayed_chart: "bar-chart",
 	};
 
-	// Statements to run as text is typed in search input field:
+	// Function to be executed as text is inputted into (search) text input field:
 	handleChange = (e) => {
-		// Assign typed text value to state property: "search_query".
+		// Assign input field text value to the state property: "search_query".
 		this.setState({ search_query: e.target.value });
 	};
 
-	// Function(s) to be executed when search button is clicked:
+	// Function containing requests and state change executions when search icon is clicked:
 	searchAction = () => {
-		// Request to get location_key, country & city values from Accuweather API:
+		// GET location_key, country & city values:
 		Axios.get(
 			`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${process.env.REACT_APP_API_KEY}&q=${this.state.search_query}`
 		).then((res) => {
-			// Setting the location key, country & city values received from request response data into the state:
+			// Assign the location key, country & city values received from response data into respective state property values:
 			this.setState({
 				location_key: res.data[0].Key,
 				country: res.data[0].Country.LocalizedName,
 				city: res.data[0].LocalizedName,
 			});
-			// Request to get 12 hour weather details data from Accuweather API:
+			// GET the next 12 hour weather data array containing hourly objects:
 			Axios.get(
 				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${process.env.REACT_APP_API_KEY}&language=en-us&details=true&metric=true`
 			)
+
 				.then((res) => {
-					// Set state values using response data:
+					// Assign the data value values received from request response into respective state property values:
 					this.setState({
 						location_icon: res.data[0].WeatherIcon,
 						location_condition: res.data[0].IconPhrase,
@@ -159,18 +160,18 @@ class App extends Component {
 		}
 	};
 
-	//Condition to suffix "AM" or "PM" to hour value:
-	setAMPM = (val) => {
-		if (val >= 24) {
+	// Function to suffix "AM" or "PM" onto hour value:
+	setAMPM = (hourValue) => {
+		if (hourValue >= 24) {
 			return "am";
-		} else if (val >= 12) {
+		} else if (hourValue >= 12) {
 			return "pm";
 		} else {
 			return "am";
 		}
 	};
 
-	// Function to return respective icon classes to set Location component icon:
+	// Function to set respective icon classes based on passed icon number values:
 	setIcon = (icon_num) => {
 		if (icon_num === 1) {
 			// ----------------------------------------- Sunny
@@ -298,7 +299,7 @@ class App extends Component {
 		}
 	};
 
-	// Function to render respective charts when the selection dropdown is changed:
+	// Function containing conditions to render respective charts when the selection dropdown is changed:
 	selectChart = (e) => {
 		if (e.target.value === "bar") {
 			// console.log("bar");
@@ -306,10 +307,11 @@ class App extends Component {
 		} else if (e.target.value === "line") {
 			// console.log("line");
 			this.setState({ displayed_chart: "line-chart" });
-		} else if (e.target.value === "pie") {
-			// console.log("pie");
-			this.setState({ displayed_chart: "pie-chart" });
 		}
+		// else if (e.target.value === "pie") {
+		// 	// console.log("pie");
+		// 	this.setState({ displayed_chart: "pie-chart" });
+		// }
 	};
 
 	render() {
