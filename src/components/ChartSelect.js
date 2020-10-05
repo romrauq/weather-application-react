@@ -10,7 +10,7 @@ const Charts = (props) => {
 				<select className="dropdown-options" onChange={props.selectChart}>
 					<option value="bar">Bar Chart</option>
 					<option value="line">Line Chart</option>
-					<option value="pie">Pie Chart</option>
+					{/* <option value="new-chart-name">New Chart</option> */}
 				</select>
 			</div>
 		</div>
