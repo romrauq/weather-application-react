@@ -20,7 +20,7 @@ const PieChart = (props) => {
 				datasets: [
 					{
 						label: "Precipitation",
-						backgroundColor: "skyblue",
+						backgroundColor: "rgb(50, 205, 150)",
 						borderColor: "rgb(50, 205, 150)",
 						data: [
 							props.precipitation[0],
@@ -32,7 +32,7 @@ const PieChart = (props) => {
 					},
 					{
 						label: "Humidity",
-						backgroundColor: "rgb(50, 190, 150)",
+						backgroundColor: "rgb(150, 250, 50)",
 						borderColor: "rgb(150, 250, 50)",
 						data: [
 							props.humidity[0],
@@ -44,7 +44,7 @@ const PieChart = (props) => {
 					},
 					{
 						label: "Wind Speed",
-						backgroundColor: "#777",
+						backgroundColor: "rgb(250, 0, 0)",
 						borderColor: "rgb(250, 0, 0)",
 						data: [
 							props.windspeed[0],
