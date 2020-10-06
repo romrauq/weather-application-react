@@ -90,13 +90,82 @@ class App extends Component {
 		displayed_chart: "bar-chart",
 	};
 
-	// Function to be executed as text is inputted into (search) text input field:
+	render() {
+		return (
+			<div className="App">
+				<SearchBar
+					handleChange={this.handleChange}
+					searchAction={this.searchAction}
+				/>
+				<LocationInfo
+					country={this.state.country}
+					city={this.state.city}
+					date={this.state.date}
+					alt={this.state.img_alt}
+					location_icon={this.setIcon(this.state.location_icon)}
+					location_condition={this.state.location_condition}
+				/>
+				<WeatherTabs
+					hour={this.state.hour}
+					setTime={this.setTime}
+					setAMPM={this.setAMPM}
+					icon_0={this.setIcon(this.state.tab_icon_0)}
+					icon_1={this.setIcon(this.state.tab_icon_1)}
+					icon_2={this.setIcon(this.state.tab_icon_2)}
+					icon_3={this.setIcon(this.state.tab_icon_3)}
+					icon_4={this.setIcon(this.state.tab_icon_4)}
+					temp_0={this.state.tab_temp_0}
+					temp_1={this.state.tab_temp_1}
+					temp_2={this.state.tab_temp_2}
+					temp_3={this.state.tab_temp_3}
+					temp_4={this.state.tab_temp_4}
+				/>
+				<AdditionalInfo
+					precipitation={this.state.precipitation_0}
+					humidity={this.state.humidity_0}
+					windspeed={this.state.windspeed_0}
+				/>
+
+				<ChartSelect selectChart={this.selectChart} />
+
+				<Chart
+					chart={this.state.displayed_chart}
+					hour={this.state.hour}
+					setTime={this.setTime}
+					setAMPM={this.setAMPM}
+					precipitation={[
+						this.state.precipitation_0,
+						this.state.precipitation_1,
+						this.state.precipitation_2,
+						this.state.precipitation_3,
+						this.state.precipitation_4,
+					]}
+					humidity={[
+						this.state.humidity_0,
+						this.state.humidity_1,
+						this.state.humidity_2,
+						this.state.humidity_3,
+						this.state.humidity_4,
+					]}
+					windspeed={[
+						this.state.windspeed_0,
+						this.state.windspeed_1,
+						this.state.windspeed_2,
+						this.state.windspeed_3,
+						this.state.windspeed_4,
+					]}
+				/>
+			</div>
+		);
+	}
+
+	// Function executed as text is inputted into (search) text input field:
 	handleChange = (e) => {
 		// Assign input field text value to the state property: "search_query".
 		this.setState({ search_query: e.target.value });
 	};
 
-	// Function containing requests and state change executions when search icon is clicked:
+	// Function containing GET requests & state change executions when search icon is clicked:
 	searchAction = () => {
 		// GET location_key, country & city values:
 		Axios.get(
@@ -112,7 +181,6 @@ class App extends Component {
 			Axios.get(
 				`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${this.state.location_key}?apikey=%09${process.env.REACT_APP_API_KEY}&language=en-us&details=true&metric=true`
 			)
-
 				.then((res) => {
 					// Assign the data value values received from request response into respective state property values:
 					this.setState({
@@ -313,75 +381,6 @@ class App extends Component {
 		// 	this.setState({ displayed_chart: "pie-chart" });
 		// }
 	};
-
-	render() {
-		return (
-			<div className="App">
-				<SearchBar
-					handleChange={this.handleChange}
-					searchAction={this.searchAction}
-				/>
-				<LocationInfo
-					country={this.state.country}
-					city={this.state.city}
-					date={this.state.date}
-					alt={this.state.img_alt}
-					location_icon={this.setIcon(this.state.location_icon)}
-					location_condition={this.state.location_condition}
-				/>
-				<WeatherTabs
-					hour={this.state.hour}
-					setTime={this.setTime}
-					setAMPM={this.setAMPM}
-					icon_0={this.setIcon(this.state.tab_icon_0)}
-					icon_1={this.setIcon(this.state.tab_icon_1)}
-					icon_2={this.setIcon(this.state.tab_icon_2)}
-					icon_3={this.setIcon(this.state.tab_icon_3)}
-					icon_4={this.setIcon(this.state.tab_icon_4)}
-					temp_0={this.state.tab_temp_0}
-					temp_1={this.state.tab_temp_1}
-					temp_2={this.state.tab_temp_2}
-					temp_3={this.state.tab_temp_3}
-					temp_4={this.state.tab_temp_4}
-				/>
-				<AdditionalInfo
-					precipitation={this.state.precipitation_0}
-					humidity={this.state.humidity_0}
-					windspeed={this.state.windspeed_0}
-				/>
-
-				<ChartSelect selectChart={this.selectChart} />
-
-				<Chart
-					chart={this.state.displayed_chart}
-					hour={this.state.hour}
-					setTime={this.setTime}
-					setAMPM={this.setAMPM}
-					precipitation={[
-						this.state.precipitation_0,
-						this.state.precipitation_1,
-						this.state.precipitation_2,
-						this.state.precipitation_3,
-						this.state.precipitation_4,
-					]}
-					humidity={[
-						this.state.humidity_0,
-						this.state.humidity_1,
-						this.state.humidity_2,
-						this.state.humidity_3,
-						this.state.humidity_4,
-					]}
-					windspeed={[
-						this.state.windspeed_0,
-						this.state.windspeed_1,
-						this.state.windspeed_2,
-						this.state.windspeed_3,
-						this.state.windspeed_4,
-					]}
-				/>
-			</div>
-		);
-	}
 }
 
 export default App;
