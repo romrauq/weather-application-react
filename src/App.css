@@ -62,43 +62,6 @@ input[type="text"] {
 	font-size: 1.2rem;
 	margin: 5px 0;
 }
-/* --------------------------- AdditionalInfo component styles:*/
-.additional-info-component {
-	width: 98%;
-	padding: 5px;
-	margin: 0px auto 5px;
-	background-color: pink;
-	border-radius: 5px;
-	cursor: default;
-}
-.additional-info-heading {
-	font-size: 1.1rem;
-	font-weight: bold;
-	text-align: center;
-	/* text-decoration: underline; */
-	margin: 0;
-}
-.additional-info-sections {
-	display: flex;
-	justify-content: space-around;
-}
-
-.additional-info-title {
-	font-size: 1rem;
-	font-weight: bolder;
-	text-align: center;
-	margin: 0;
-}
-.additional-info-status {
-	font-size: 0.8rem;
-	text-align: center;
-	margin: 0;
-}
-.middle-info-section {
-	padding: 0 5px;
-	border-left: 1px solid #555;
-	border-right: 1px solid #555;
-}
 /* --------------------------- ChartsSelect component styles:*/
 .charts-select-component {
 	display: flex;
