@@ -1,9 +1,19 @@
 import React from "react";
 import WeatherTab from "./WeatherTab";
 
+const component_styles = {
+	display: "flex",
+	width: "98%",
+	height: "fit-content",
+	padding: "5px",
+	margin: "0 auto 5px",
+	backgroundColor: "teal",
+	borderRadius: "5px",
+};
+
 const WeatherTabs = (props) => {
 	return (
-		<div className="weathertabs-component">
+		<div style={component_styles}>
 			<WeatherTab
 				hour={props.setTime(props.hour)}
 				ampm={props.setAMPM(props.hour)}
