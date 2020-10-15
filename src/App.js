@@ -13,6 +13,7 @@ class App extends Component {
 	state = {
 		search_query: "",
 		location_key: {},
+		city_array: [],
 		country: "Country Name",
 		city: "City Name",
 		date: new Date().toDateString(),
@@ -94,6 +95,8 @@ class App extends Component {
 		return (
 			<div className="App">
 				<SearchBar
+					value={this.state.search_query}
+					citiesArray={this.state.city_array}
 					handleChange={this.handleChange}
 					searchAction={this.searchAction}
 				/>
@@ -163,6 +166,20 @@ class App extends Component {
 	handleChange = (e) => {
 		// Assign input field text value to the state property: "search_query".
 		this.setState({ search_query: e.target.value });
+
+		if (this.state.search_query.length >= 2) {
+			Axios.get(
+				`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${process.env.REACT_APP_API_KEY}&q=${this.state.search_query}`
+			).then((data) => {
+				const citiesArray = data.map((city_name) => {
+					return city_name.LocalizedName;
+				});
+				console.log(citiesArray);
+				this.setState({
+					city_array: citiesArray,
+				});
+			});
+		}
 	};
 
 	// Function containing GET requests & state change executions when search icon is clicked:
