@@ -3,24 +3,27 @@ import Autocomplete from "react-autocomplete";
 
 class SearchBar extends Component {
 	state = {
-		query: "",
+		value: this.props.value,
+		cities: this.props.citiesArray,
 	};
+
 	render() {
 		return (
 			<div className="searchbar-component">
 				<div className="autocomplete-wrapper">
 					<Autocomplete
-						value={this.state.query}
-						// autoItems={this.state.city_options}
-						// getItemValue={(cityList) => data.localizedName}
-						shouldItemRender={this.renderMovieTitle}
+						value={this.state.value}
+						items={this.state.cities}
+						getItemValue={(item) => item.LocalizedName}
+						shouldItemRender={this.renderCityNames}
 						renderMenu={(item) => <div className="dropdown">{item}</div>}
 						renderItem={(item, isHighlighted) => (
 							<div className={`item ${isHighlighted ? "selected-item" : ""}`}>
 								{item.title}
 							</div>
 						)}
-						onChange={(event, value) => this.setState({ value })}
+						// onChange={(event, value) => this.setState({ value })}
+						onChange={this.props.handleChange}
 						onSelect={(value) => this.setState({ value })}
 					/>
 				</div>
@@ -34,8 +37,8 @@ class SearchBar extends Component {
 		);
 	}
 
-	renderMovieTitle = (state, val) => {
-		return state.title.toLowerCase().indexOf(val.toLowerCase()) !== -1;
+	renderCityNames = (state, value = this.state.value) => {
+		return state.city.toLowerCase().indexOf(value.toLowerCase()) !== -1;
 	};
 }
 
