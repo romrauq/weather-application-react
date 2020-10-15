@@ -19,17 +19,66 @@ body {
 .searchbar-component {
 	display: flex;
 	flex-direction: row;
-	width: 98%;
+	width: 100%;
 	margin: 0 auto 5px;
 }
-input[type="text"] {
+/* 
+	input[type="text"] {
 	font-size: 1rem;
 	width: 88%;
 	height: 35px;
 	padding: 5px 5px;
 	border: 1px solid rgba(135, 206, 235, 0.7);
 	border-radius: 3px;
+	outline: none; 
+}*/
+.autocomplete-wrapper {
+	position: relative;
+	display: inline-block;
+	width: 88%;
+	margin: 0 auto;
+}
+.autocomplete-wrapper > div {
+	width: 100%;
+}
+.autocomplete-wrapper input {
+	font-size: 1rem;
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid #cecece;
 	outline: none;
+}
+.autocomplete-wrapper input:focus {
+	border-color: #0f67ff;
+	box-shadow: none;
+	outline: none;
+}
+.autocomplete-wrapper .dropdown {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	text-align: left;
+	max-height: 280px;
+	overflow: hidden;
+	overflow-y: auto;
+	background-color: #ffffff;
+	border: 1px solid #0f67ff;
+	border-top: none;
+}
+.autocomplete-wrapper .item {
+	display: block;
+	font-size: 14px;
+	padding: 15px;
+	cursor: pointer;
+}
+.autocomplete-wrapper .item.selected-item {
+	background-color: #0069ff;
+	color: #fafbfc;
+}
+
+.autocomplete-wrapper .item:hover {
+	background-color: #0069ff;
+	color: #fafbfc;
 }
 .search-icon {
 	color: #444;
