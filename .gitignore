@@ -25,3 +25,4 @@ yarn-error.log*
 # personal ingnore files:
 .env
 debug.log
+autocomplete_response
