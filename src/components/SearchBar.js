@@ -7,9 +7,20 @@ class SearchBar extends Component {
 		cities: this.props.citiesArray,
 	};
 
+	component_styles = {
+		display: "flex",
+		flexDirection: "row",
+		width: "100%",
+		margin: "0 auto 5px",
+	};
+	search_button_styles = {
+		color: "#444",
+		fontSize: "1.5rem",
+		margin: "auto",
+	};
 	render() {
 		return (
-			<div className="searchbar-component">
+			<div style={this.component_styles}>
 				<div className="autocomplete-wrapper">
 					<Autocomplete
 						value={this.state.value}
@@ -30,6 +41,7 @@ class SearchBar extends Component {
 				<i
 					id="search-button"
 					className="fas fa-search search-icon"
+					style={this.search_button_styles}
 					type="button"
 					onClick={this.props.searchAction}
 				></i>
