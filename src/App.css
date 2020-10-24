@@ -16,12 +16,6 @@ body {
 	background-color: #ffffff;
 }
 /* --------------------------- Searchbar component styles:*/
-.searchbar-component {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	margin: 0 auto 5px;
-}
 /* 
 	input[type="text"] {
 	font-size: 1rem;
@@ -79,74 +73,6 @@ body {
 .autocomplete-wrapper .item:hover {
 	background-color: #0069ff;
 	color: #fafbfc;
-}
-.search-icon {
-	color: #444;
-	font-size: 1.5rem;
-	margin: auto;
-}
-.search-icon:hover {
-	color: rgb(10, 10, 10);
-	cursor: pointer;
-}
-/* --------------------------- WeatherTabs (single) component styles:*/
-.weather-tab-component {
-	display: flex;
-	flex-direction: column;
-	color: white;
-	font-size: 0.8rem;
-	text-align: center;
-	width: 20%;
-	height: fit-content;
-	border-radius: 0 0 20% 20%;
-	cursor: pointer;
-}
-.weather-tab-component:hover {
-	background: linear-gradient(to bottom, rgba(158, 97, 97, 0.2), skyblue);
-}
-.weather-tab-component p {
-	margin: 0;
-}
-.tab-icons {
-	font-size: 1.2rem;
-	margin: 5px 0;
-}
-/* --------------------------- ChartsSelect component styles:*/
-.charts-select-component {
-	display: flex;
-	justify-content: space-between;
-	width: 98%;
-	height: fit-content;
-	padding: 5px;
-	margin: 0px auto 5px;
-	background-color: limegreen;
-	border-radius: 5px;
-	cursor: default;
-}
-.charts-select-heading {
-	font-size: 1.1rem;
-	font-weight: bold;
-	margin: 0;
-}
-.dropdown-options {
-	font-size: 0.9rem;
-	font-weight: bold;
-	font-family: Arial;
-	padding: 3px 15px;
-	border-radius: 5px;
-	outline: none;
-	cursor: pointer;
-}
-/* --------------------------- Graph component styles:*/
-.graph-component {
-	width: 98%;
-	height: 35vh;
-	margin: 0px auto;
-	border: solid 1px #808080;
-	border-radius: 5px;
-}
-.selected-graph {
-	height: 100%;
 }
 /*-------------------------------------Media Queries:*/
 /* Laptop screen size styles: */
