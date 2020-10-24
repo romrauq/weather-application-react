@@ -1,4 +1,5 @@
 import React from "react";
+
 const component_styles = {
 	width: "98%",
 	padding: "5px",
