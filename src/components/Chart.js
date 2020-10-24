@@ -1,6 +1,6 @@
 import React from "react";
-import BarChart from "./Charts/BarChart";
-import LineChart from "./Charts/LineChart";
+import BarChart from "./sub_components/BarChart";
+import LineChart from "./sub_components/LineChart";
 // import PieChart from "./Charts/PieChart";
 
 const component_styles = {
