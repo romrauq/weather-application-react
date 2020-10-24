@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import Chart from "chart.js";
 
+const chart_styles = {
+	height: "100%",
+};
+
 const BarChart = (props) => {
 	useEffect(() => {
 		const ctx = document.getElementById("myChart").getContext("2d");
@@ -63,7 +67,7 @@ const BarChart = (props) => {
 	});
 
 	return (
-		<div className="selected-graph">
+		<div style={chart_styles}>
 			<canvas id="myChart" style={{ width: "100%", height: "100%" }}></canvas>
 		</div>
 	);
