@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherTab from "./WeatherTab";
+import WeatherTab from "./sub_components/WeatherTab";
 
 const component_styles = {
 	display: "flex",
