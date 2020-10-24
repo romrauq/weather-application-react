@@ -1,6 +1,6 @@
 import React from "react";
 
-// Replace statement below with an api request that would get respective city images:
+// Replace variable value below with an API request that would get respective city images:
 const location_image = "./resources/images/location-image.jpg";
 // CSS STYLING:
 const component_styles = {
@@ -35,7 +35,7 @@ const location_info_container = {
 	width: "fit-content",
 };
 const icon_styles = {
-	fontSize: "1.2rem",
+	fontSize: "1rem",
 	color: "skyblue",
 };
 const condition_text_styles = {
