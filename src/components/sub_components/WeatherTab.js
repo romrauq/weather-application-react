@@ -12,6 +12,7 @@ const component_styles = {
 };
 const tab_text_styles = {
 	margin: "0",
+	cursor: "default",
 };
 const icon_styles = {
 	fontSize: "1.2rem",
