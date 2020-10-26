@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Autocomplete from "react-autocomplete";
 
-class SearchBar extends Component {
+class AutoCompleteComponent extends Component {
 	state = {
 		value: this.props.value,
 		cities: this.props.citiesArray,
@@ -54,4 +54,4 @@ class SearchBar extends Component {
 	};
 }
 
-export default SearchBar;
+export default AutoCompleteComponent;
