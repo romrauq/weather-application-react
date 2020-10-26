@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import SearchBar from "./components/SearchBar";
+import AutoCompleteComponent from "./components/sub_components/AutoCompleteComponent";
+import SimpleSearch from "./components/sub_components/SimpleSearch";
 import LocationInfo from "./components/Location";
 import WeatherTabs from "./components/WeatherTabs";
 import AdditionalInfo from "./components/AdditionalInfo";
@@ -94,7 +95,11 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<SearchBar
+				<SimpleSearch
+					handleChange={this.handleChange}
+					searchAction={this.searchAction}
+				/>
+				<AutoCompleteComponent
 					value={this.state.search_query}
 					citiesArray={this.state.city_array}
 					handleChange={this.handleChange}
