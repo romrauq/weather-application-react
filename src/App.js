@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import AutoCompleteComponent from "./components/sub_components/AutoCompleteComponent";
+// import AutoCompleteComponent from "./components/sub_components/AutoCompleteComponent";
 import SimpleSearch from "./components/sub_components/SimpleSearch";
 import LocationInfo from "./components/Location";
 import WeatherTabs from "./components/WeatherTabs";
@@ -99,12 +99,12 @@ class App extends Component {
 					handleChange={this.handleChange}
 					searchAction={this.searchAction}
 				/>
-				<AutoCompleteComponent
+				{/* <AutoCompleteComponent
 					value={this.state.search_query}
 					citiesArray={this.state.city_array}
 					handleChange={this.handleChange}
 					searchAction={this.searchAction}
-				/>
+				/> */}
 				<LocationInfo
 					country={this.state.country}
 					city={this.state.city}
