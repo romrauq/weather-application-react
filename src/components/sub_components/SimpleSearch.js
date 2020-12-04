@@ -20,6 +20,7 @@ const search_button_styles = {
 	color: "#444",
 	fontSize: "1.5rem",
 	margin: "auto",
+	cursor: "pointer",
 };
 
 const SimpleSearch = (props) => {
